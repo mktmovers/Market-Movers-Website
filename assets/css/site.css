@@ -118,16 +118,17 @@ img { max-width: 100%; }
 .machine__foot { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 13px; color: var(--soft); line-height: 1.5; }
 
 /* ---------- Old way / new way ---------- */
-.compare { --min: 300px; gap: clamp(28px, 4vw, 56px); }
-.compare__col { border-top: 3px solid var(--line); padding-top: 20px; }
-.compare__col--new { border-top-color: var(--ink); }
-.compare__label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-.compare__col--new .compare__label { color: var(--ink); }
+.compare { --min: 300px; gap: 0; }
+.compare__col { background: var(--fog); padding: clamp(22px, 3vw, 32px) clamp(20px, 2.6vw, 30px); }
+.compare__col--new { background: var(--ink); color: var(--paper); }
+.compare__label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.compare__col--new .compare__label { color: var(--gold); }
 .compare ul { list-style: none; margin: 0; padding: 0; }
-.compare li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; line-height: 1.5; color: var(--muted); }
-.compare li::before { content: "—"; color: #a8a8a8; font-weight: 700; font-size: 15px; }
-.compare__col--new li { color: var(--ink); font-weight: 500; }
-.compare__col--new li::before { content: "→"; color: var(--blue); font-weight: 900; }
+.compare li { display: grid; grid-template-columns: 16px 1fr; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.5; color: var(--muted); }
+.compare li:last-child { border-bottom: 0; }
+.compare li::before { content: "×"; color: #8f8f8f; font-weight: 700; font-size: 15px; }
+.compare__col--new li { color: var(--paper); font-weight: 500; border-bottom-color: rgba(255,255,255,0.14); }
+.compare__col--new li::before { content: "✓"; color: var(--gold); font-weight: 900; }
 
 /* ---------- Webinar flagship ---------- */
 .flagship { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
