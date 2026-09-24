@@ -28,7 +28,7 @@ a:hover { color: var(--blue-dark); }
 img { max-width: 100%; }
 [id] { scroll-margin-top: 68px; }
 
-/* Signal down the machine rail: a 1.7s pass, then idle — repeats every 6s, first pass at 1.3s. */
+/* Signal down the machine rail: a ~10s pass, then idle — repeats every 36s, first pass at 1.3s. */
 @keyframes mmSignal { 0% { top: -60px; opacity: 1; } 28% { top: 100%; opacity: 1; } 28.01%, 100% { top: 100%; opacity: 0; } }
 @keyframes mmLive { 0% { box-shadow: 0 0 0 0 var(--sig); opacity: 1; } 70% { box-shadow: 0 0 0 6px transparent; opacity: .55; } 100% { box-shadow: 0 0 0 0 transparent; opacity: 1; } }
 
@@ -113,7 +113,7 @@ img { max-width: 100%; }
 .machine__steps { position: relative; padding-left: 26px; }
 .machine__list { list-style: none; margin: 0; padding: 0; }
 .machine__rail { position: absolute; left: 5px; top: 6px; bottom: 16px; width: 1px; background: rgba(255,255,255,0.18); overflow: hidden; }
-.machine__rail i { position: absolute; left: 0; top: -60px; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--sig), transparent); animation: mmSignal 6s linear 1.3s infinite; }
+.machine__rail i { position: absolute; left: 0; top: -60px; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--sig), transparent); animation: mmSignal 36s linear 1.3s infinite; }
 .machine--gold { --sig: var(--gold); }
 .machine__step { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .machine__node { position: absolute; left: 0; width: 11px; height: 11px; border: 1px solid rgba(255,255,255,0.4); background: var(--ink); }
@@ -351,7 +351,7 @@ img { max-width: 100%; }
 .mm-motion [data-rv].is-in { opacity: 1; animation: mmReveal .6s var(--ease-out) var(--rv, 0s) backwards; }
 
 /* ---------- Signal flow: stages joined by a line that draws, a dot that travels, nodes that light ---------- */
-.flow { --D: 1.8s; --line: rgba(255,255,255,0.18); --node-b: rgba(255,255,255,0.4); --node-bg: var(--ink); --lab: var(--muted-dark); --lab-on: var(--paper); position: relative; }
+.flow { --D: 10.8s; --line: rgba(255,255,255,0.18); --node-b: rgba(255,255,255,0.4); --node-bg: var(--ink); --lab: var(--muted-dark); --lab-on: var(--paper); position: relative; }
 .flow--light { --line: rgba(0,0,0,0.14); --node-b: rgba(0,0,0,0.3); --node-bg: var(--paper); --lab: var(--muted); --lab-on: var(--ink); }
 .flow__stages { position: relative; z-index: 1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); }
 .flow__stage { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; min-width: 0; }
@@ -442,7 +442,7 @@ img { max-width: 100%; }
 .case__metric::before { content: ""; position: absolute; left: 30px; top: 50%; width: 160px; height: 80px; transform: translateY(-50%); background: radial-gradient(closest-side, rgba(28,114,230,0.28), transparent); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
 .case__signal { flex: none; width: 36px; height: 2px; margin-right: 12px; background: linear-gradient(to right, transparent, var(--blue)); transform-origin: left center; }
 .mm-motion .case__signal { transform: scaleX(0); }
-.mm-motion .case.is-on .case__signal { animation: mmFillX .7s var(--ease-out) .25s forwards; }
+.mm-motion .case.is-on .case__signal { animation: mmFillX 4.2s var(--ease-out) .25s forwards; }
 @media (hover: hover) {
   .case:hover { border-color: #9d9d9d; }
   .case:hover .case__arrow { transform: translateX(5px); }
@@ -457,8 +457,8 @@ img { max-width: 100%; }
 @keyframes mmDest { from { color: var(--muted-dark); text-shadow: none; } 50% { color: var(--paper); text-shadow: 0 0 14px rgba(28,114,230,0.9); } to { color: var(--paper); text-shadow: none; } }
 .mm-motion .cta__line { transform: scaleX(0); }
 .mm-motion .cta__dest { color: var(--muted-dark); }
-.mm-motion .cta__signal.is-on .cta__line { animation: mmFillX 1.4s cubic-bezier(.45,0,.2,1) forwards; }
-.mm-motion .cta__signal.is-on .cta__dest { animation: mmDest .9s ease 1.3s forwards; }
+.mm-motion .cta__signal.is-on .cta__line { animation: mmFillX 8.4s cubic-bezier(.45,0,.2,1) forwards; }
+.mm-motion .cta__signal.is-on .cta__dest { animation: mmDest .9s ease 8.3s forwards; }
 
 @media (prefers-reduced-motion: reduce) {
   .site-header, .site-header__bar, .btn--blue::after, .quote, .case__arrow, .serp__pane { transition: none; }
