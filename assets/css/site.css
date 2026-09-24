@@ -186,8 +186,30 @@ img { max-width: 100%; }
 .who { font-size: 14.5px; font-weight: 700; }
 .role { font-size: 13px; color: var(--muted); }
 
-/* ---------- Home: clients strip ---------- */
-.client { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.01em; color: #9d9d9d; }
+/* ---------- Home: clients strip (continuous horizontal scroll) ---------- */
+.clients { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.12); padding: 30px var(--gutter); overflow: hidden; }
+.clients__row { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); }
+.clients__label { flex: none; letter-spacing: 0.14em; color: #6b6b6b; }
+.clients__viewport { flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+.clients__track { display: flex; width: max-content; animation: mmMarquee 32s linear infinite; }
+.clients__viewport:hover .clients__track { animation-play-state: paused; }
+.clients__set { display: flex; align-items: center; gap: clamp(36px, 4.5vw, 64px); padding-right: clamp(36px, 4.5vw, 64px); flex: none; }
+.client { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.01em; color: #9d9d9d; white-space: nowrap; }
+.client-logo { display: block; height: 34px; width: auto; max-width: none; opacity: 0.72; }
+.client-logo--stacked { height: 50px; }
+@keyframes mmMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 599.98px) {
+  .clients { padding: 24px 0; }
+  .clients__row { flex-direction: column; align-items: stretch; gap: 16px; }
+  .clients__label { text-align: center; }
+  .clients__track { animation-duration: 24s; }
+  .client-logo { height: 28px; }
+  .client-logo--stacked { height: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clients__track { animation: none; }
+  .clients__viewport { overflow-x: auto; }
+}
 
 /* ---------- Home: testimonials ---------- */
 .video { margin: 0; display: flex; flex-direction: column; gap: 14px; }
