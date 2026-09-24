@@ -242,6 +242,9 @@ img { max-width: 100%; }
 .partner-box { --min: 260px; margin-top: clamp(40px, 5vw, 64px); background: var(--fog); padding: clamp(28px, 4vw, 44px); gap: 28px 40px; align-items: start; }
 .partner-box__title { grid-column: 1 / -1; font-family: var(--display); font-weight: 900; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.1; letter-spacing: -0.02em; max-width: 760px; }
 .partner-box p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--text-2); }
+/* One column until all three paragraphs fit side by side — never a 2 + 1 split. */
+.partner-box { grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 960px) { .partner-box { grid-template-columns: repeat(3, 1fr); gap: 28px 40px; } }
 
 /* ---------- Home: results ---------- */
 .stats { --min: 290px; gap: clamp(28px, 4vw, 48px); }
