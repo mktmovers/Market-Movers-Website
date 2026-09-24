@@ -463,3 +463,19 @@ img { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .site-header, .site-header__bar, .btn--blue::after, .quote, .case__arrow, .serp__pane { transition: none; }
 }
+
+/* ---------- Mobile carousels (reviews, team): swipe with snap points + dots ---------- */
+.mcar__dots { display: none; }
+@media (max-width: 699.98px) {
+  .mcar { display: flex; flex-wrap: nowrap; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin: 0 calc(-1 * var(--gutter)); padding: 4px var(--gutter) 8px; scroll-padding: 0 var(--gutter); }
+  .mcar::-webkit-scrollbar { display: none; }
+  .mcar { justify-content: flex-start; }
+  .mcar > * { flex: 0 0 86%; min-width: 0; scroll-snap-align: center; }
+  .quotes.mcar > * { outline-offset: -1px; }
+  .quotes.mcar > :last-child:nth-child(odd) { grid-column: auto; }
+  .mcar__dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+  .mcar__dot { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .mcar__dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #c7c7c7; transition: background-color .2s, transform .2s; }
+  .mcar__dot[aria-current="true"]::before { background: var(--blue); transform: scale(1.25); }
+}

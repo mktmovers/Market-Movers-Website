@@ -68,6 +68,39 @@
     });
   });
 
+  // Mobile carousels: dots under each [data-mcar] track (the track itself is CSS scroll-snap).
+  all('[data-mcar]').forEach(function (track) {
+    var items = Array.prototype.slice.call(track.children);
+    if (items.length < 2) return;
+    track.setAttribute('role', 'region');
+    track.setAttribute('tabindex', '0');
+    var dots = document.createElement('div');
+    dots.className = 'mcar__dots';
+    items.forEach(function (item, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'mcar__dot';
+      b.setAttribute('aria-label', 'Show item ' + (i + 1) + ' of ' + items.length);
+      b.addEventListener('click', function () {
+        track.scrollTo({ left: item.offsetLeft - (track.clientWidth - item.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+      });
+      dots.appendChild(b);
+    });
+    track.parentNode.insertBefore(dots, track.nextSibling);
+    var sync = function () {
+      var mid = track.scrollLeft + track.clientWidth / 2, best = 0, bestD = Infinity;
+      items.forEach(function (item, i) {
+        var d = Math.abs(item.offsetLeft + item.offsetWidth / 2 - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      dots.querySelectorAll('.mcar__dot').forEach(function (d, i) { d.setAttribute('aria-current', String(i === best)); });
+    };
+    var raf = 0;
+    track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); }, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  });
+
   // Scroll reveals: eyebrow → headline → copy → cards, a 20px rise, staggered 80ms per batch.
   // Elements already on screen at load are left alone so nothing above the fold flashes.
   if (motion) {
@@ -78,6 +111,7 @@
     all('main > section:not(.sec--hero):not(.clients)').forEach(function (sec) {
       sec.querySelectorAll(REVEAL).forEach(function (el) {
         if (el.closest('[data-rv]') || !belowFold(el)) return;
+        if (window.innerWidth < 700 && el.parentElement && el.parentElement.hasAttribute('data-mcar')) return;
         el.setAttribute('data-rv', '');
         targets.push(el);
       });
