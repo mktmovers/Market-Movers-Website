@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<script>if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) document.documentElement.classList.add('mm-intro');</script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/us-map.js" defer></script>
 </head>
@@ -58,25 +59,37 @@
   <div class="hero-lines"></div>
   <div class="hero-grid">
     <div>
-      <div class="eyebrow eyebrow--gold" style="margin-bottom:22px">Performance Marketing</div>
-      <h1 class="h1">We make money, by making you money</h1>
-      <p class="hero-lede">Small firm, big results. You bring your offer — we design, build, and run the system that sells it. A partner on your side of the table, not another vendor billing for activity.</p>
-      <div class="btn-row" style="margin-bottom:34px">
+      <div class="eyebrow eyebrow--gold intro" style="margin-bottom:22px; --d:0s">Performance Marketing</div>
+      <h1 class="h1" id="hero-h1">We make money, by making you money</h1>
+      <script>
+        // Split the headline into words and stagger them left-to-right, top-to-bottom (0.15s start, 0.06s apart).
+        (function () {
+          var h = document.getElementById('hero-h1');
+          if (!document.documentElement.classList.contains('mm-intro')) return;
+          var words = h.textContent.trim().split(/\s+/);
+          h.setAttribute('aria-label', words.join(' '));
+          h.innerHTML = words.map(function (w, i) {
+            return '<span class="intro-word" aria-hidden="true" style="--d:' + (0.15 + i * 0.06).toFixed(2) + 's">' + w + '</span>';
+          }).join(' ');
+        })();
+      </script>
+      <p class="hero-lede intro" style="--d:0.6s">Small firm, big results. You bring your offer — we design, build, and run the system that sells it. A partner on your side of the table, not another vendor billing for activity.</p>
+      <div class="btn-row intro" style="margin-bottom:34px; --d:0.72s">
         <a class="btn btn--blue" href="https://calendly.com/jessica-caldwell2/30min">Book a strategy call</a>
         <a class="btn btn--ghost" href="#results">See the proof</a>
       </div>
     </div>
 
-    <div class="machine">
+    <div class="machine intro intro--panel" style="--d:0.9s">
       <div class="machine__head"><span>The machine</span><span class="machine__live"><i></i>Running</span></div>
       <div class="machine__steps">
         <div class="machine__rail"><i></i></div>
         <ol class="machine__list">
-        <li class="machine__step"><div><div class="machine__node"></div><div class="machine__name">Analyze Offer and Angle</div><div class="machine__note">Who is actually in market, and why</div></div><div class="machine__tag">01</div></li>
-        <li class="machine__step"><div><div class="machine__node"></div><div class="machine__name">Get Your Offer Seen, Create Funnel</div><div class="machine__note">Cold email, ads and content that earn a reply</div></div><div class="machine__tag">02</div></li>
-        <li class="machine__step"><div><div class="machine__node"></div><div class="machine__name">Qualification</div><div class="machine__note">Our team vets every lead before it reaches your calendar</div></div><div class="machine__tag">03</div></li>
-        <li class="machine__step"><div><div class="machine__node"></div><div class="machine__name">Booked call</div><div class="machine__note">Calendar filled with the right conversations</div></div><div class="machine__tag">04</div></li>
-        <li class="machine__step"><div><div class="machine__node"></div><div class="machine__name">Closed and documented</div><div class="machine__note">The play that worked becomes a repeatable SOP</div></div><div class="machine__tag">05</div></li>
+        <li class="machine__step" style="--on:1.55s"><div><div class="machine__node"></div><div class="machine__name">Analyze Offer and Angle</div><div class="machine__note">Who is actually in market, and why</div></div><div class="machine__tag">01</div></li>
+        <li class="machine__step" style="--on:1.9s"><div><div class="machine__node"></div><div class="machine__name">Get Your Offer Seen, Create Funnel</div><div class="machine__note">Cold email, ads and content that earn a reply</div></div><div class="machine__tag">02</div></li>
+        <li class="machine__step" style="--on:2.25s"><div><div class="machine__node"></div><div class="machine__name">Qualification</div><div class="machine__note">Our team vets every lead before it reaches your calendar</div></div><div class="machine__tag">03</div></li>
+        <li class="machine__step" style="--on:2.6s"><div><div class="machine__node"></div><div class="machine__name">Booked call</div><div class="machine__note">Calendar filled with the right conversations</div></div><div class="machine__tag">04</div></li>
+        <li class="machine__step" style="--on:2.95s"><div><div class="machine__node"></div><div class="machine__name">Closed and documented</div><div class="machine__note">The play that worked becomes a repeatable SOP</div></div><div class="machine__tag">05</div></li>
         </ol>
       </div>
       <div class="machine__foot">Systems. Built end-to-end, measured at every stage, and fully documented. Everything we build is scalable; we can double down when results are proven</div>

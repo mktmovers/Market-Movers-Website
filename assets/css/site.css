@@ -28,7 +28,9 @@ a:hover { color: var(--blue-dark); }
 img { max-width: 100%; }
 [id] { scroll-margin-top: 68px; }
 
-@keyframes mmFlow { 0% { transform: translateY(-100%); } 100% { transform: translateY(420%); } }
+/* Signal down the machine rail: a 1.7s pass, then idle — repeats every 6s, first pass at 1.3s. */
+@keyframes mmSignal { 0% { top: -60px; opacity: 1; } 28% { top: 100%; opacity: 1; } 28.01%, 100% { top: 100%; opacity: 0; } }
+@keyframes mmLive { 0% { box-shadow: 0 0 0 0 var(--sig); opacity: 1; } 70% { box-shadow: 0 0 0 6px transparent; opacity: .55; } 100% { box-shadow: 0 0 0 0 transparent; opacity: 1; } }
 
 /* ---------- Layout ---------- */
 .wrap { max-width: 1240px; margin: 0 auto; }
@@ -100,16 +102,15 @@ img { max-width: 100%; }
 }
 
 /* ---------- Hero "machine" panel ---------- */
-.machine { border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.03); padding: 26px 26px 30px; position: relative; overflow: hidden; }
+.machine { --sig: var(--blue); border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.03); padding: 26px 26px 30px; position: relative; overflow: hidden; }
 .machine__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-dark); }
 .machine__live { display: flex; align-items: center; gap: 7px; }
-.machine__live i { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); display: inline-block; }
+.machine__live i { width: 6px; height: 6px; border-radius: 50%; background: var(--sig); display: inline-block; animation: mmLive 2.4s ease-in-out infinite; }
 .machine__steps { position: relative; padding-left: 26px; }
 .machine__list { list-style: none; margin: 0; padding: 0; }
 .machine__rail { position: absolute; left: 5px; top: 6px; bottom: 16px; width: 1px; background: rgba(255,255,255,0.18); overflow: hidden; }
-.machine__rail i { display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--blue), transparent); animation: mmFlow 3.4s linear infinite; }
-.machine--gold .machine__live i { background: var(--gold); }
-.machine--gold .machine__rail i { background: linear-gradient(to bottom, transparent, var(--gold), transparent); }
+.machine__rail i { position: absolute; left: 0; top: -60px; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--sig), transparent); animation: mmSignal 6s linear 1.3s infinite; }
+.machine--gold { --sig: var(--gold); }
 .machine__step { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .machine__node { position: absolute; left: 0; width: 11px; height: 11px; border: 1px solid rgba(255,255,255,0.4); background: var(--ink); }
 .machine__name { font-family: var(--display); font-weight: 700; font-size: 15.5px; letter-spacing: -0.01em; }
@@ -296,7 +297,7 @@ img { max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .machine__rail i { animation: none; }
+  .machine__rail i, .machine__live i { animation: none; }
 }
 
 /* ---------- Free tools ---------- */
@@ -318,3 +319,17 @@ img { max-width: 100%; }
 /* ---------- Privacy ---------- */
 .back-link { margin-left: auto; color: rgba(255,255,255,0.72); font-size: 13.5px; font-weight: 500; }
 .back-link:hover { color: var(--paper); }
+
+/* ---------- Hero intro: "the machine comes online" (only when <html> has .mm-intro; skipped for reduced motion) ---------- */
+@keyframes mmRise { from { opacity: 0; transform: translateY(14px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes mmPanel { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes mmStepOn { from { opacity: 0.35; } to { opacity: 1; } }
+@keyframes mmNodePing {
+  30% { background: var(--sig); border-color: var(--sig); box-shadow: 0 0 0 3px rgba(28,114,230,0.22), 0 0 14px var(--sig); }
+  100% { background: var(--ink); border-color: rgba(255,255,255,0.4); box-shadow: none; }
+}
+.mm-intro .intro { animation: mmRise 0.7s cubic-bezier(.2,.7,.2,1) var(--d, 0s) both; }
+.mm-intro .intro--panel { animation-name: mmPanel; animation-duration: 0.8s; }
+.mm-intro .intro-word { display: inline-block; animation: mmRise 0.7s cubic-bezier(.2,.7,.2,1) var(--d, 0s) both; }
+.mm-intro .machine__step { animation: mmStepOn 0.45s ease var(--on, 0s) both; }
+.mm-intro .machine__node { animation: mmNodePing 1s ease var(--on, 0s) both; }
