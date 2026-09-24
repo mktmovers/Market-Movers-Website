@@ -169,7 +169,10 @@ img { max-width: 100%; }
 .site-footer a.site-footer__link:hover { color: var(--paper); }
 
 /* ---------- Cards / misc ---------- */
-.path-card { display: flex; flex-direction: column; gap: 14px; padding: clamp(28px, 3.5vw, 44px); transition: background-color .15s; }
+.path-card { position: relative; display: flex; flex-direction: column; gap: 14px; padding: clamp(28px, 3.5vw, 44px); transition: background-color .15s, transform .25s ease, box-shadow .25s ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .path-card:hover, .path-card:focus-visible { transform: scale(1.035); box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 1; }
+}
 .path-card--light { background: var(--fog); color: var(--ink); border-top: 3px solid var(--ink); }
 .path-card--light:hover { background: #ececec; color: var(--ink); }
 .path-card--dark { background: var(--ink); color: var(--paper); border-top: 3px solid var(--gold); }
