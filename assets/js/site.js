@@ -101,6 +101,11 @@
     sync();
   });
 
+  // Only one testimonial video plays at a time (matters once they sit side by side in a carousel).
+  document.addEventListener('play', function (e) {
+    all('video').forEach(function (v) { if (v !== e.target) v.pause(); });
+  }, true);
+
   // Scroll reveals: eyebrow → headline → copy → cards, a 20px rise, staggered 80ms per batch.
   // Elements already on screen at load are left alone so nothing above the fold flashes.
   if (motion) {
