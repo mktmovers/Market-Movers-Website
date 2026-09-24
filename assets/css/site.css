@@ -195,6 +195,9 @@ img { max-width: 100%; }
 .quote { margin: 0; padding: 34px 30px 30px; display: flex; flex-direction: column; gap: 20px; }
 .quote p { margin: 0; font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.35; letter-spacing: -0.015em; flex: 1; }
 .quote footer { padding-top: 14px; }
+.quote footer:has(.quote__avatar) { flex-direction: row; align-items: center; gap: 14px; }
+.quote__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; display: block; flex: none; background: var(--fog); }
+.quote__who { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 
 /* ---------- Home: approach ---------- */
 .partner-box { --min: 260px; margin-top: clamp(40px, 5vw, 64px); background: var(--fog); padding: clamp(28px, 4vw, 44px); gap: 28px 40px; align-items: start; }
