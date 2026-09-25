@@ -37,6 +37,20 @@
     window.addEventListener('resize', function () { if (window.innerWidth >= 900) setOpen(false); });
   }
 
+  // Services dropdown: hover opens it via CSS; click / Enter toggles; Escape, outside click or tabbing away closes.
+  var drop = document.querySelector('.nav__drop');
+  if (drop) {
+    var dropBtn = drop.querySelector('.nav__drop-btn');
+    var setDrop = function (open) {
+      drop.classList.toggle('is-open', open);
+      dropBtn.setAttribute('aria-expanded', String(open));
+    };
+    dropBtn.addEventListener('click', function () { setDrop(!drop.classList.contains('is-open')); });
+    document.addEventListener('click', function (e) { if (!drop.contains(e.target)) setDrop(false); });
+    drop.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setDrop(false); dropBtn.focus(); } });
+    drop.addEventListener('focusout', function (e) { if (!drop.contains(e.relatedTarget)) setDrop(false); });
+  }
+
   // Header compresses slightly once the page is scrolled.
   if (header) {
     var ticking = false;
