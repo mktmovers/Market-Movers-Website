@@ -32,4 +32,5 @@ To preview locally, run `python3 -m http.server` in this folder and open http://
 - **Privacy policy.** Fill in the [bracketed] items and have counsel review it.
 - **Map markers.** The cities are illustrative. Edit `MARKERS` in `assets/js/us-map.js`.
 - **Client names** in the "Trusted by" strip need to be confirmed.
-- **Social share image.** Add a 1200×630 image and an `og:image` tag.
+- **Social share image.** `assets/img/og-image.jpg` (1200×630) is wired into every page's `og:image` / `twitter:image`. Swap the file to change it.
+- **Structured data.** Each page has JSON-LD in its `<head>`. The home and Course Creators FAQ schema is copied from the on-page FAQ text, so update both together.
