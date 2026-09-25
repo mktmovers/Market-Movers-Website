@@ -26,3 +26,6 @@ a pull request so they can merge it. Unmerged branches are how edits went missin
 The private preview artifact is https://claude.ai/artifact/GRRugeAmFaGTzek64rVb9q. Republish it from the
 latest merged code rather than creating a new one. Page links like `community/` need rewriting to
 `community/index.html` in the preview copy only; the repo files keep the directory-style links.
+The preview frame also keeps the previous page's scroll position, so each preview copy gets a small
+`<script data-preview-top>` before `</head>` that scrolls to the top on load (when there is no `#hash`).
+This is preview-only too; never add it to the repo pages, where browsers already open pages at the top.
