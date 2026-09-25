@@ -9,7 +9,9 @@ This is the static marketing site built from the Claude Design redesign. It's pl
 | `/` | `index.html` |
 | `/webinar-marketing/` | `webinar-marketing/index.html` |
 | `/law-firm-seo/` | `law-firm-seo/index.html` |
-| `/case-studies/` | `case-studies/index.html` (Cogent Law) |
+| `/case-studies/` | `case-studies/index.html` (overview) |
+| `/case-studies/cogent-law/` | `case-studies/cogent-law/index.html` |
+| `/case-studies/cybervault/` | `case-studies/cybervault/index.html` |
 | `/course-creators/` | `course-creators/index.html` |
 | `/free-tools/` | `free-tools/index.html` |
 | `/community/` | `community/index.html` |
@@ -28,7 +30,6 @@ To preview locally, run `python3 -m http.server` in this folder and open http://
 
 ## Still to fill in
 
-- **Case-study images.** In `index.html`, search for `Case image:`. Replace each placeholder `<div>` with an `<img>` (16:10).
 - **Group-chat screenshots.** The section is hidden for now; search for `Chat proof:`. Add the three images to `assets/img/`, then remove the `hidden` attribute.
 - **Community waitlist link.** Every `data-waitlist` button in `community/index.html` points to `#top`. Swap in the Circle or GHL URL when it exists.
 - **Webinar Planner link.** It should be the public `notion.site` link. The current `app.notion.com` link asks visitors to sign in.
