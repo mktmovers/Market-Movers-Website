@@ -33,17 +33,11 @@
 
   const MARKERS = [
     { c: 'Washington, DC', ll: [-77.04, 38.91], label: true },
-    { c: 'New York, NY', ll: [-74.01, 40.71], label: true, side: 'left', dy: -17 },
-    { c: 'Boston, MA', ll: [-71.06, 42.36] },
     { c: 'Charlotte, NC', ll: [-80.84, 35.23] },
     { c: 'Atlanta, GA', ll: [-84.39, 33.75], label: true },
     { c: 'Miami, FL', ll: [-80.19, 25.76], label: true, side: 'left' },
-    { c: 'Nashville, TN', ll: [-86.78, 36.16] },
     { c: 'Chicago, IL', ll: [-87.63, 41.88], label: true },
-    { c: 'Minneapolis, MN', ll: [-93.27, 44.98] },
     { c: 'Austin, TX', ll: [-97.74, 30.27], label: true },
-    { c: 'Denver, CO', ll: [-104.99, 39.74] },
-    { c: 'Phoenix, AZ', ll: [-112.07, 33.45] },
     { c: 'Los Angeles, CA', ll: [-118.24, 34.05], label: true },
     { c: 'Seattle, WA', ll: [-122.33, 47.61], label: true }
   ];
