@@ -88,7 +88,7 @@ img { max-width: 100%; }
 .brand img { width: 36px; height: 36px; display: block; }
 .brand span { font-family: var(--display); font-weight: 900; font-size: 16px; letter-spacing: -0.02em; white-space: nowrap; }
 /* Fixed-height wrapping row: when space runs out, whole tabs drop out from the right instead of being cut in half. */
-.nav { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: clamp(14px, 1.8vw, 26px); row-gap: 40px; margin-left: auto; align-items: center; white-space: nowrap; min-width: 0; height: 20px; line-height: 20px; overflow: hidden; }
+.nav { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: clamp(12px, 1.3vw, 22px); row-gap: 40px; margin-left: auto; align-items: center; white-space: nowrap; min-width: 0; height: 20px; line-height: 20px; overflow: hidden; }
 .nav a { color: rgba(255,255,255,0.72); font-size: 13.5px; font-weight: 500; }
 .nav a:hover { color: var(--paper); }
 .nav a.is-accent { color: var(--gold); font-weight: 600; }
