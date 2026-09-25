@@ -723,3 +723,6 @@ img { max-width: 100%; }
 .case__link::after { content: ""; position: absolute; inset: 0; }
 .case:has(.case__link) { position: relative; cursor: pointer; }
 .case__more { margin-top: auto; padding-top: 6px; font-size: 14.5px; font-weight: 700; color: var(--blue); }
+.cs-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1099.98px) { .cs-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 519.98px) { .cs-stats { grid-template-columns: minmax(0, 1fr); } }
