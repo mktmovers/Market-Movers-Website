@@ -307,7 +307,7 @@ img { max-width: 100%; }
 .reach__n { font-family: var(--display); font-weight: 900; font-size: 34px; letter-spacing: -0.03em; line-height: 1; }
 .reach__l { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-dark); margin-top: 8px; }
 .founder-p { font-size: 16.5px; line-height: 1.65; color: var(--text-2); margin: 0; text-wrap: pretty; }
-/* 3 on top, 2 centered below on wide screens; stacks on small ones. */
+/* Three per row on wide screens (a short last row is centered); stacks on small ones. */
 .team { --gap: clamp(20px, 2.5vw, 32px); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); max-width: min(886px, 74%); margin: 0 auto; }
 .member { display: flex; flex-direction: column; gap: 14px; flex: 0 1 calc((100% - 2 * var(--gap)) / 3); min-width: min(100%, 180px); }
 .member__photo { aspect-ratio: 4 / 5; background: var(--fog); overflow: hidden; }
