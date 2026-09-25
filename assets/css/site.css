@@ -680,3 +680,6 @@ img { max-width: 100%; }
 
 /* Two white sections in a row: drop the second one's top padding so the gap isn't doubled. */
 .sec:not(.fog):not(.dark) + .sec:not(.fog):not(.dark) { padding-top: 0; }
+
+/* Standalone text links ("… →", "← Back to site"): same look, but a ~44px-tall tap area on touch screens. */
+.text-link, .back-link { display: inline-block; padding: 14px 0; margin: -14px 0; }
