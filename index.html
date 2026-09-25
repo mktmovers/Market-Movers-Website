@@ -40,12 +40,17 @@
     <nav class="nav" aria-label="Main">
       <a href="#approach">Approach</a>
       <a href="#team">Team</a>
-      <a href="webinar-marketing/">Webinars</a>
-      <a href="law-firm-seo/">SEO</a>
-      <a class="is-accent" href="course-creators/">Course Creators</a>
+      <div class="nav__drop">
+        <button type="button" class="nav__drop-btn" aria-expanded="false" aria-controls="nav-services">Services<span class="nav__caret" aria-hidden="true"></span></button>
+        <div class="nav__menu" id="nav-services">
+          <a href="webinar-marketing/">Webinar Marketing</a>
+          <a href="law-firm-seo/">Law Firm SEO</a>
+          <a href="course-creators/">Course Launch Marketing</a>
+          <a href="#services">All services</a>
+        </div>
+      </div>
       <a href="free-tools/">Free Tools</a>
       <a href="community/">Community</a>
-      <a href="#services">Services</a>
     </nav>
     <a class="btn btn--blue btn--sm site-header__cta" href="https://calendly.com/jessica-caldwell2/30min">Book a strategy call</a>
     <button type="button" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">Menu ☰</button>
@@ -53,12 +58,13 @@
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
     <a href="#approach">Approach</a>
     <a href="#team">Team</a>
-    <a href="webinar-marketing/">Webinars</a>
-    <a href="law-firm-seo/">SEO</a>
-    <a href="course-creators/">Course Creators</a>
+    <span class="mobile-nav__group">Services</span>
+    <a class="mobile-nav__sub" href="webinar-marketing/">Webinar Marketing</a>
+    <a class="mobile-nav__sub" href="law-firm-seo/">Law Firm SEO</a>
+    <a class="mobile-nav__sub" href="course-creators/">Course Launch Marketing</a>
+    <a class="mobile-nav__sub" href="#services">All services</a>
     <a href="free-tools/">Free Tools</a>
     <a href="community/">Community</a>
-    <a href="#services">Services</a>
     <a class="mobile-nav__cta" href="https://calendly.com/jessica-caldwell2/30min">Book a strategy call</a>
   </nav>
 </header>
