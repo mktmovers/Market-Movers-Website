@@ -209,4 +209,26 @@
       if (entries[0].isIntersecting) play();
     }, { threshold: 0.5 }).observe(serp);
   }
+  // Back-to-top arrow, bottom right: appears after about one screen of scrolling.
+  var toTop = document.createElement('button');
+  toTop.type = 'button';
+  toTop.className = 'to-top';
+  toTop.setAttribute('aria-label', 'Back to top');
+  toTop.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.appendChild(toTop);
+  var footer = document.querySelector('.site-footer');
+  var syncTop = function () {
+    toTop.classList.toggle('is-shown', window.scrollY > window.innerHeight * 0.8);
+    // Rise above the footer once it scrolls into view, so the arrow never covers footer links.
+    var lift = footer ? Math.max(0, window.innerHeight - footer.getBoundingClientRect().top) : 0;
+    toTop.style.setProperty('--lift', lift + 'px');
+  };
+  window.addEventListener('resize', syncTop);
+  window.addEventListener('scroll', syncTop, { passive: true });
+  syncTop();
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    var brand = document.querySelector('.brand');
+    if (brand) brand.focus({ preventScroll: true });
+  });
 })();
