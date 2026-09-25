@@ -29,3 +29,9 @@ latest merged code rather than creating a new one. Page links like `community/` 
 The preview frame also keeps the previous page's scroll position, so each preview copy gets a small
 `<script data-preview-top>` before `</head>` that scrolls to the top on load (when there is no `#hash`).
 This is preview-only too; never add it to the repo pages, where browsers already open pages at the top.
+
+## Design conventions
+
+Every box-style card grows and lifts on hover (the "Standard card hover" block at the end of
+`assets/css/site.css`). When you add a new kind of card or box, add its class to that selector list
+rather than writing a one-off hover rule, so the whole site behaves the same way.

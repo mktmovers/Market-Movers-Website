@@ -142,10 +142,7 @@ img { max-width: 100%; }
 
 /* ---------- Old way / new way ---------- */
 .compare { --min: 300px; gap: 0; }
-.compare__col { position: relative; background: var(--fog); padding: clamp(22px, 3vw, 32px) clamp(20px, 2.6vw, 30px); transition: transform .25s ease, box-shadow .25s ease; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .compare__col:hover { transform: scale(1.035); box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 1; }
-}
+.compare__col { position: relative; background: var(--fog); padding: clamp(22px, 3vw, 32px) clamp(20px, 2.6vw, 30px); }
 .compare__col--new { background: var(--ink); color: var(--paper); }
 .compare__label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .compare__col--new .compare__label { color: var(--gold); }
@@ -196,9 +193,6 @@ img { max-width: 100%; }
 
 /* ---------- Cards / misc ---------- */
 .path-card { position: relative; display: flex; flex-direction: column; gap: 14px; padding: clamp(28px, 3.5vw, 44px); transition: background-color .15s, transform .25s ease, box-shadow .25s ease; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .path-card:hover, .path-card:focus-visible { transform: scale(1.035); box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 1; }
-}
 .path-card--light { background: var(--fog); color: var(--ink); border-top: 3px solid var(--ink); }
 .path-card--light:hover { background: #ececec; color: var(--ink); }
 .path-card--dark { background: var(--ink); color: var(--paper); border-top: 3px solid var(--gold); }
@@ -453,12 +447,10 @@ img { max-width: 100%; }
 .serp__ai mark { background: rgba(28,114,230,0.14); color: var(--blue); font-weight: 700; padding: 0 3px; }
 
 /* ---------- Testimonials: lift + client result on hover ---------- */
-.quote { transition: transform .25s ease, box-shadow .25s ease; }
 .quote__result { position: absolute; top: 10px; left: 30px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); }
 @media (hover: hover) {
   .quote__result { opacity: 0; transform: translateY(4px); transition: opacity .25s ease, transform .25s ease; }
   .quote:hover .quote__result { opacity: 1; transform: none; }
-  .quote:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); z-index: 1; }
 }
 
 /* ---------- Case studies: arrow nudge, border, glow behind the metric; signal draws into the number ---------- */
@@ -696,15 +688,6 @@ img { max-width: 100%; }
 .trust--gold .inside-card { border-top-color: var(--gold); }
 .trust--gold .inside-card__n { color: #7d6d3a; }
 .trust__close { margin: clamp(26px, 3vw, 36px) 0 clamp(48px, 6vw, 72px); max-width: 760px; font-family: var(--display); font-weight: 700; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.4; letter-spacing: -0.01em; text-wrap: pretty; }
-.trust .inside-card { position: relative; transition: transform .25s ease, box-shadow .25s ease; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .trust .inside-card:hover { transform: scale(1.035); box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 1; }
-}
-/* Law firm SEO page: the four "What we cover" cards grow on hover like the other cards. */
-#pillars .pillar { position: relative; transition: transform .25s ease, box-shadow .25s ease; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  #pillars .pillar:hover { transform: scale(1.035); box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 1; }
-}
 
 /* ---------- Case studies ---------- */
 .cs-client { border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.03); padding: clamp(24px, 3vw, 34px); }
@@ -726,3 +709,19 @@ img { max-width: 100%; }
 .cs-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1099.98px) { .cs-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 519.98px) { .cs-stats { grid-template-columns: minmax(0, 1fr); } }
+
+/* =====================================================================
+   Standard card hover: every box-style card grows 3.5% and lifts.
+   Uses the `scale` property (not `transform`) so it never fights the
+   scroll-reveal or infographic animations. Add new card classes here.
+   ===================================================================== */
+.path-card, .compare__col, .inside-card, .pillar, .service, .tool, .case, .quote, .mmf__card, .mmg__card {
+  position: relative;
+  transition: scale .25s ease, box-shadow .25s ease, background-color .15s ease, color .15s ease, border-color .25s ease;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .path-card:hover, .path-card:focus-visible, .compare__col:hover, .inside-card:hover, .pillar:hover, .service:hover,
+  .tool:hover, .tool:focus-visible, .case:hover, .quote:hover, .mmf__card:hover, .mmg__card:hover {
+    scale: 1.035; box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 2;
+  }
+}
