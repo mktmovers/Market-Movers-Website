@@ -683,3 +683,10 @@ img { max-width: 100%; }
 
 /* Standalone text links ("… →", "← Back to site"): same look, but a ~44px-tall tap area on touch screens. */
 .text-link, .back-link { display: inline-block; padding: 14px 0; margin: -14px 0; }
+
+/* Back-to-top arrow (added by site.js). */
+.to-top { position: fixed; right: clamp(16px, 2.5vw, 28px); bottom: clamp(16px, 2.5vw, 28px); z-index: 45; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.28); background: var(--blue); color: var(--paper); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 26px -8px rgba(0,0,0,0.45); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .25s ease, visibility .25s, background-color .15s; }
+.to-top.is-shown { opacity: 1; visibility: visible; transform: translateY(calc(-1 * var(--lift, 0px))); }
+.to-top:hover { background: var(--blue-dark); }
+.to-top:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
