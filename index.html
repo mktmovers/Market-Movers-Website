@@ -49,7 +49,14 @@
           <a href="#services">All services</a>
         </div>
       </div>
-      <a href="case-studies/">Case Studies</a>
+      <div class="nav__drop">
+        <button type="button" class="nav__drop-btn" aria-expanded="false" aria-controls="nav-cases">Case Studies<span class="nav__caret" aria-hidden="true"></span></button>
+        <div class="nav__menu" id="nav-cases">
+          <a href="case-studies/cogent-law/">Cogent Law</a>
+          <a href="case-studies/cybervault/">CyberVault School</a>
+          <a href="case-studies/">All case studies</a>
+        </div>
+      </div>
       <a href="free-tools/">Free Tools</a>
       <a href="community/">Community</a>
     </nav>
@@ -64,7 +71,10 @@
     <a class="mobile-nav__sub" href="law-firm-seo/">Law Firm SEO</a>
     <a class="mobile-nav__sub" href="course-creators/">Course Launch Marketing</a>
     <a class="mobile-nav__sub" href="#services">All services</a>
-    <a href="case-studies/">Case Studies</a>
+    <span class="mobile-nav__group">Case Studies</span>
+    <a class="mobile-nav__sub" href="case-studies/cogent-law/">Cogent Law</a>
+    <a class="mobile-nav__sub" href="case-studies/cybervault/">CyberVault School</a>
+    <a class="mobile-nav__sub" href="case-studies/">All case studies</a>
     <a href="free-tools/">Free Tools</a>
     <a href="community/">Community</a>
     <a class="mobile-nav__cta" href="https://calendly.com/jessica-caldwell2/30min">Book a strategy call</a>
@@ -124,7 +134,7 @@
         <div class="clients__set">
         <img class="client-logo client-logo--stacked" src="assets/img/client-cogent-law.png" alt="Cogent Law" width="371" height="160">
         <img class="client-logo client-logo--crest" src="assets/img/client-elder-law-college.png" alt="Elder Law College" width="533" height="160">
-        <span class="client">CyberVault School</span>
+        <img class="client-logo" src="assets/img/client-cybervault.png" alt="CyberVault School" width="1491" height="160" style="height:24px">
         <img class="client-logo" src="assets/img/client-solkoff-legal.png" alt="Solkoff Legal" width="686" height="160">
         <img class="client-logo client-logo--icon" src="assets/img/client-kaiser.png" alt="Kaiser" width="160" height="160">
         <img class="client-logo" src="assets/img/client-cbc-summit.png" alt="CBC Summit" width="889" height="160">
@@ -138,7 +148,7 @@
         <div class="clients__set" aria-hidden="true">
         <img class="client-logo client-logo--stacked" src="assets/img/client-cogent-law.png" alt="" width="371" height="160">
         <img class="client-logo client-logo--crest" src="assets/img/client-elder-law-college.png" alt="" width="533" height="160">
-        <span class="client">CyberVault School</span>
+        <img class="client-logo" src="assets/img/client-cybervault.png" alt="" width="1491" height="160" style="height:24px">
         <img class="client-logo" src="assets/img/client-solkoff-legal.png" alt="" width="686" height="160">
         <img class="client-logo client-logo--icon" src="assets/img/client-kaiser.png" alt="" width="160" height="160">
         <img class="client-logo" src="assets/img/client-cbc-summit.png" alt="" width="889" height="160">
@@ -451,19 +461,19 @@
         <div class="case__body">
           <div class="case__meta"><span>Cogent Law</span><span>Law firm · U.S.</span></div>
           <div class="case__metric"><span class="case__signal" aria-hidden="true"></span>$<span data-count="2">2</span>M</div>
-          <h3 class="case__title"><a class="case__link" href="case-studies/">From limited reach to $2M in pipeline</a></h3>
+          <h3 class="case__title"><a class="case__link" href="case-studies/cogent-law/">From limited reach to $2M in pipeline</a></h3>
           <p>Outreach, webinars, content and SEO working as one system took the firm from referral-dependent to a 10× increase in lead production, a $2M pipeline and #1 Google rankings in its core practice areas.</p>
           <span class="case__more">Read the case study →</span>
         </div>
       </article>
       <article class="case">
-        <!-- Case image: replace the placeholder <div> with <img class="photo" src="assets/img/case-cybervault.jpg" alt="…"> (16:10). -->
-        <div class="case__media"><div class="case__placeholder"></div><span class="case__arrow">→</span></div>
+        <div class="case__media case__media--logo"><img src="assets/img/client-cybervault.png" alt="CyberVault" width="1491" height="160" loading="lazy" style="height:34px"><span class="case__arrow">→</span></div>
         <div class="case__body">
           <div class="case__meta"><span>CyberVault School</span><span>Education · Tech</span></div>
           <div class="case__metric"><span class="case__signal" aria-hidden="true"></span><span data-count="10000">10,000</span>+</div>
-          <h3 class="case__title">From low visibility to 10,000+ opportunities</h3>
-          <p>Visibility engineered into a repeatable opportunity engine: outreach, content and automation running together instead of in parallel.</p>
+          <h3 class="case__title"><a class="case__link" href="case-studies/cybervault/">From low visibility to 10,000+ opportunities</a></h3>
+          <p>Content without the camera, full sales funnels, paid ads and live events took the school to a $1M+ enrollment pipeline and 100K+ people reached.</p>
+          <span class="case__more">Read the case study →</span>
         </div>
       </article>
     </div>
