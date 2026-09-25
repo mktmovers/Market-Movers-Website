@@ -198,16 +198,20 @@ img { max-width: 100%; }
 .role { font-size: 13px; color: var(--muted); }
 
 /* ---------- Home: clients strip (continuous horizontal scroll) ---------- */
-.clients { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.12); padding: 30px var(--gutter); overflow: hidden; }
+.clients { background: var(--paper); border-bottom: 1px solid var(--line); padding: 30px var(--gutter); overflow: hidden; }
 .clients__row { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); }
-.clients__label { flex: none; letter-spacing: 0.14em; color: #6b6b6b; }
+.clients__label { flex: none; letter-spacing: 0.14em; color: var(--muted); }
 .clients__viewport { flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
 .clients__track { display: flex; width: max-content; animation: mmMarquee 48s linear infinite; }
 .clients__viewport:hover .clients__track { animation-play-state: paused; }
 .clients__set { display: flex; align-items: center; gap: clamp(36px, 4.5vw, 64px); padding-right: clamp(36px, 4.5vw, 64px); flex: none; }
-.client { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.01em; color: #9d9d9d; white-space: nowrap; }
-.client-logo { display: block; height: 34px; width: auto; max-width: none; opacity: 0.72; }
+.client { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: 0.01em; color: var(--muted); white-space: nowrap; }
+.client-logo { display: block; height: 34px; width: auto; max-width: none; }
 .client-logo--stacked { height: 50px; }
+.client-logo--crest { height: 44px; }
+.client-logo--icon { height: 46px; }
+/* White-only artwork: shown dark until a color file replaces it. */
+.client-logo--mono { filter: brightness(0); opacity: 0.8; }
 @keyframes mmMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (max-width: 599.98px) {
   .clients { padding: 24px 0; }
@@ -216,6 +220,8 @@ img { max-width: 100%; }
   .clients__track { animation-duration: 36s; }
   .client-logo { height: 28px; }
   .client-logo--stacked { height: 42px; }
+  .client-logo--crest { height: 36px; }
+  .client-logo--icon { height: 38px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .clients__track { animation: none; }
