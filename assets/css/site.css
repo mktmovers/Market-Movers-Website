@@ -210,8 +210,6 @@ img { max-width: 100%; }
 .client-logo--stacked { height: 50px; }
 .client-logo--crest { height: 44px; }
 .client-logo--icon { height: 46px; }
-/* White-only artwork: shown dark until a color file replaces it. */
-.client-logo--mono { filter: brightness(0); opacity: 0.8; }
 @keyframes mmMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (max-width: 599.98px) {
   .clients { padding: 24px 0; }
