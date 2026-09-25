@@ -702,6 +702,10 @@ img { max-width: 100%; }
 .cs-quote { background: var(--paper); border: 1px solid var(--line); }
 .case__media--logo { display: flex; align-items: center; justify-content: center; background: var(--paper); border-bottom: 1px solid var(--line); }
 .case__media--logo img { height: 84px; width: auto; }
+.case__media--logo { height: 330px; }
+.case__media--chat { flex-direction: column; justify-content: flex-start; gap: 18px; padding-top: 28px; background: linear-gradient(var(--paper) 0 26%, var(--fog) 26%); }
+.case__media--chat img { flex: none; max-width: calc(100% - 128px); object-fit: contain; }
+.case__media--chat .case__chat { height: auto; width: min(270px, 76%); max-width: none; filter: drop-shadow(0 14px 24px rgba(0,0,0,0.16)); -webkit-mask-image: linear-gradient(transparent, #000 14px); mask-image: linear-gradient(transparent, #000 14px); }
 .case__link { color: inherit; }
 .case__link::after { content: ""; position: absolute; inset: 0; }
 .case:has(.case__link) { position: relative; cursor: pointer; }
