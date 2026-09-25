@@ -668,3 +668,12 @@ img { max-width: 100%; }
 @keyframes mmfGrowY { from { opacity: 1; transform: scaleY(0); } to { opacity: 1; transform: none; } }
 @keyframes mmfReveal { from { opacity: 1; clip-path: inset(-12px -12px 100% -12px); } to { opacity: 1; clip-path: inset(-12px); } }
 @media (max-width: 899.98px) { .mmf.is-play .mmf-grow { animation-name: mmfGrowY; } }
+
+/* Keep a phrase together on one line. */
+.nowrap { white-space: nowrap; }
+/* Headline sized to its column so a .nowrap phrase (e.g. "Steady enrollment.") never overflows. */
+.h1--fit { font-size: clamp(32px, 4.3vw, 59px); }
+@supports (font-size: 1cqi) {
+  .hero-grid > :has(> .h1--fit) { container-type: inline-size; }
+  .h1--fit { font-size: min(10cqi, 59px); }
+}
