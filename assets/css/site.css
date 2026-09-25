@@ -690,3 +690,9 @@ img { max-width: 100%; }
 .to-top:hover { background: var(--blue-dark); }
 .to-top:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
+
+/* Webinar + course pages: "webinars build trust" cards. */
+.trust { gap: clamp(16px, 2vw, 24px); }
+.trust--gold .inside-card { border-top-color: var(--gold); }
+.trust--gold .inside-card__n { color: #7d6d3a; }
+.trust__close { margin: clamp(26px, 3vw, 36px) 0 clamp(48px, 6vw, 72px); max-width: 760px; font-family: var(--display); font-weight: 700; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.4; letter-spacing: -0.01em; text-wrap: pretty; }
