@@ -132,7 +132,7 @@ img { max-width: 100%; }
 .machine__list { list-style: none; margin: 0; padding: 0; }
 .machine__rail { position: absolute; left: 5px; top: 6px; bottom: 16px; width: 1px; background: rgba(255,255,255,0.18); overflow: hidden; }
 .machine__rail i { position: absolute; left: 0; top: -60px; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--sig), transparent); animation: mmSignal 36s linear 1.3s infinite; }
-.machine--gold { --sig: var(--gold); }
+.machine--gold { --sig: var(--gold); --sig-soft: rgba(175,158,101,0.28); }
 .machine__step { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .machine__node { position: absolute; left: 0; width: 11px; height: 11px; border: 1px solid rgba(255,255,255,0.4); background: var(--ink); }
 .machine__name { font-family: var(--display); font-weight: 700; font-size: 15.5px; letter-spacing: -0.01em; }
@@ -351,7 +351,7 @@ img { max-width: 100%; }
 @keyframes mmPanel { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes mmStepOn { from { opacity: 0.35; } to { opacity: 1; } }
 @keyframes mmNodePing {
-  30% { background: var(--sig); border-color: var(--sig); box-shadow: 0 0 0 3px rgba(28,114,230,0.22), 0 0 14px var(--sig); }
+  30% { background: var(--sig); border-color: var(--sig); box-shadow: 0 0 0 3px var(--sig-soft, rgba(28,114,230,0.22)), 0 0 14px var(--sig); }
   100% { background: var(--ink); border-color: rgba(255,255,255,0.4); box-shadow: none; }
 }
 .mm-intro .intro { animation: mmRise 0.7s cubic-bezier(.2,.7,.2,1) var(--d, 0s) both; }
