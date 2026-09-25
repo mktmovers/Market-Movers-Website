@@ -12,6 +12,8 @@ This is the static marketing site built from the Claude Design redesign. It's pl
 | `/case-studies/` | `case-studies/index.html` (overview) |
 | `/case-studies/cogent-law/` | `case-studies/cogent-law/index.html` |
 | `/case-studies/cybervault/` | `case-studies/cybervault/index.html` |
+| `/case-studies/elder-law-college/` | `case-studies/elder-law-college/index.html` (placeholder, noindex) |
+| `/case-studies/solkoff-legal/` | `case-studies/solkoff-legal/index.html` (placeholder, noindex) |
 | `/course-creators/` | `course-creators/index.html` |
 | `/free-tools/` | `free-tools/index.html` |
 | `/community/` | `community/index.html` |
