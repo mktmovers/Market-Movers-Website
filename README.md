@@ -7,6 +7,8 @@ This is the static marketing site built from the Claude Design redesign. It's pl
 | URL | File |
 | --- | --- |
 | `/` | `index.html` |
+| `/webinar-marketing/` | `webinar-marketing/index.html` |
+| `/law-firm-seo/` | `law-firm-seo/index.html` |
 | `/course-creators/` | `course-creators/index.html` |
 | `/free-tools/` | `free-tools/index.html` |
 | `/community/` | `community/index.html` |
@@ -29,7 +31,8 @@ To preview locally, run `python3 -m http.server` in this folder and open http://
 - **Group-chat screenshots.** The section is hidden for now; search for `Chat proof:`. Add the three images to `assets/img/`, then remove the `hidden` attribute.
 - **Community waitlist link.** Every `data-waitlist` button in `community/index.html` points to `#top`. Swap in the Circle or GHL URL when it exists.
 - **Webinar Planner link.** It should be the public `notion.site` link. The current `app.notion.com` link asks visitors to sign in.
-- **Privacy policy.** Fill in the [bracketed] items and have counsel review it.
+- **Privacy policy.** Fill in the [bracketed] items and have counsel review it. It is set to `noindex` and left out of `sitemap.xml` until then; flip both back once it is approved.
 - **Map markers.** The cities are illustrative. Edit `MARKERS` in `assets/js/us-map.js`.
 - **Client names** in the "Trusted by" strip need to be confirmed.
-- **Social share image.** Add a 1200×630 image and an `og:image` tag.
+- **Social share image.** `assets/img/og-image.jpg` (1200×630) is wired into every page's `og:image` / `twitter:image`. Swap the file to change it.
+- **Structured data.** Each page has JSON-LD in its `<head>`. The FAQ schema on each page is copied from the on-page FAQ text, so update both together.
