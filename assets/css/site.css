@@ -696,3 +696,7 @@ img { max-width: 100%; }
 .trust--gold .inside-card { border-top-color: var(--gold); }
 .trust--gold .inside-card__n { color: #7d6d3a; }
 .trust__close { margin: clamp(26px, 3vw, 36px) 0 clamp(48px, 6vw, 72px); max-width: 760px; font-family: var(--display); font-weight: 700; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.4; letter-spacing: -0.01em; text-wrap: pretty; }
+.trust .inside-card { position: relative; transition: transform .25s ease, box-shadow .25s ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .trust .inside-card:hover { transform: scale(1.035); box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 1; }
+}
