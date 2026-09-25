@@ -677,3 +677,6 @@ img { max-width: 100%; }
   .hero-grid > :has(> .h1--fit) { container-type: inline-size; }
   .h1--fit { font-size: min(10cqi, 59px); }
 }
+
+/* Two white sections in a row: drop the second one's top padding so the gap isn't doubled. */
+.sec:not(.fog):not(.dark) + .sec:not(.fog):not(.dark) { padding-top: 0; }
