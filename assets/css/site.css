@@ -296,8 +296,8 @@ img { max-width: 100%; }
 .reach__l { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-dark); margin-top: 8px; }
 .founder-p { font-size: 16.5px; line-height: 1.65; color: var(--text-2); margin: 0; text-wrap: pretty; }
 /* 3 on top, 2 centered below on wide screens; stacks on small ones. */
-.team { --gap: clamp(20px, 2.5vw, 32px); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
-.member { display: flex; flex-direction: column; gap: 14px; flex: 0 1 calc((100% - 2 * var(--gap)) / 3); min-width: min(100%, 260px); }
+.team { --gap: clamp(20px, 2.5vw, 32px); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); max-width: min(886px, 74%); margin: 0 auto; }
+.member { display: flex; flex-direction: column; gap: 14px; flex: 0 1 calc((100% - 2 * var(--gap)) / 3); min-width: min(100%, 180px); }
 .member__photo { aspect-ratio: 4 / 5; background: var(--fog); overflow: hidden; }
 .member__info { border-top: 2px solid var(--ink); padding-top: 12px; display: flex; flex-direction: column; gap: 3px; }
 .member__info .who { font-size: 15px; }
@@ -480,6 +480,8 @@ img { max-width: 100%; }
   .mcar::-webkit-scrollbar { display: none; }
   .mcar { justify-content: flex-start; }
   .mcar > * { flex: 0 0 86%; min-width: 0; scroll-snap-align: center; }
+  .team.mcar { max-width: none; }
+  .team.mcar > * { flex-basis: 60%; }
   .quotes.mcar > * { outline-offset: -1px; }
   .quotes.mcar > :last-child:nth-child(odd) { grid-column: auto; }
   .mcar__dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
