@@ -705,3 +705,21 @@ img { max-width: 100%; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   #pillars .pillar:hover { transform: scale(1.035); box-shadow: 0 18px 40px rgba(0,0,0,0.18); z-index: 1; }
 }
+
+/* ---------- Case studies ---------- */
+.cs-client { border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.03); padding: clamp(24px, 3vw, 34px); }
+.cs-client__logo { background: var(--paper); display: flex; align-items: center; justify-content: center; padding: 26px; margin-bottom: 24px; }
+.cs-client__logo img { height: 72px; width: auto; }
+.cs-client__facts { margin: 0; display: grid; gap: 14px; }
+.cs-client__facts div { display: grid; grid-template-columns: 130px 1fr; gap: 12px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.12); }
+.cs-client__facts dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted-dark); padding-top: 3px; }
+.cs-client__facts dd { margin: 0; font-size: 15px; line-height: 1.45; color: var(--paper); }
+.cs-built { display: flex; flex-wrap: wrap; gap: clamp(16px, 2vw, 24px); }
+.cs-built > * { flex: 1 1 300px; min-width: 0; background: var(--paper); }
+.cs-quote { background: var(--paper); border: 1px solid var(--line); }
+.case__media--logo { display: flex; align-items: center; justify-content: center; background: var(--paper); border-bottom: 1px solid var(--line); }
+.case__media--logo img { height: 84px; width: auto; }
+.case__link { color: inherit; }
+.case__link::after { content: ""; position: absolute; inset: 0; }
+.case:has(.case__link) { position: relative; cursor: pointer; }
+.case__more { margin-top: auto; padding-top: 6px; font-size: 14.5px; font-weight: 700; color: var(--blue); }

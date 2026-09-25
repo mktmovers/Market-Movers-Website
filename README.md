@@ -9,6 +9,7 @@ This is the static marketing site built from the Claude Design redesign. It's pl
 | `/` | `index.html` |
 | `/webinar-marketing/` | `webinar-marketing/index.html` |
 | `/law-firm-seo/` | `law-firm-seo/index.html` |
+| `/case-studies/` | `case-studies/index.html` (Cogent Law) |
 | `/course-creators/` | `course-creators/index.html` |
 | `/free-tools/` | `free-tools/index.html` |
 | `/community/` | `community/index.html` |
