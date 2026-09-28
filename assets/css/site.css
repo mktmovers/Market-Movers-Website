@@ -772,3 +772,9 @@ img { max-width: 100%; }
 .cs-table tfoot th, .cs-table tfoot td { font-family: var(--display); font-weight: 900; border-bottom: 0; }
 .cs-table__muted { color: var(--muted); font-size: 13px; }
 .cs-table__note { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin: 14px 0 0; }
+/* Case study: pipeline stats on a light background. */
+.cs-pipeline { margin-top: clamp(40px, 5vw, 64px); }
+.cs-pipeline .stat { border-top-color: var(--line); }
+.cs-pipeline .stat__value { font-size: clamp(40px, 4.2vw, 64px); }
+.cs-pipeline .stat__note { color: var(--muted); }
+.cs-dark-lede { max-width: 720px; margin: 0 0 clamp(28px, 3.5vw, 40px); font-size: 17px; line-height: 1.6; color: #c7c7c7; text-wrap: pretty; }
