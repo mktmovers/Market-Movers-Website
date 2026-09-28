@@ -778,3 +778,6 @@ img { max-width: 100%; }
 .cs-pipeline .stat__value { font-size: clamp(40px, 4.2vw, 64px); }
 .cs-pipeline .stat__note { color: var(--muted); }
 .cs-dark-lede { max-width: 720px; margin: 0 0 clamp(28px, 3.5vw, 40px); font-size: 17px; line-height: 1.6; color: #c7c7c7; text-wrap: pretty; }
+.cs-funnel__title { font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin: clamp(28px, 3.5vw, 44px) 0 14px; }
+.cs-funnel__title:first-of-type { margin-top: 0; }
+.cs-stats .stat__value.cs-stat--text { font-size: clamp(34px, 3.4vw, 52px); }
