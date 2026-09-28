@@ -742,3 +742,33 @@ img { max-width: 100%; }
 .cs-double span:last-child { color: var(--blue); }
 .cs-double__arrow { font-weight: 400; font-size: 0.5em; color: var(--muted); }
 .cs-double__label { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: -0.01em; border-top: 2px solid var(--ink); padding-top: 12px; margin: 16px 0 20px; max-width: 280px; }
+/* Case study: acquisition funnel (bar width set per row with --w). */
+.cs-funnel { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.cs-funnel li { display: grid; grid-template-columns: minmax(130px, 190px) minmax(0, 1fr) minmax(120px, 170px); gap: 16px; align-items: center; }
+.cs-funnel__label { font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; text-align: right; line-height: 1.2; }
+.cs-funnel__label small { display: block; font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+.cs-funnel__bar { width: var(--w); min-width: 64px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--blue); color: var(--paper); font-family: var(--display); font-size: 19px; font-variant-numeric: tabular-nums; }
+.cs-funnel li:nth-child(n+4) .cs-funnel__bar { background: var(--blue-dark); }
+.cs-funnel li.cs-funnel__win .cs-funnel__bar { background: var(--gold); color: var(--ink); }
+.cs-funnel__rate { font-size: 13.5px; line-height: 1.4; color: var(--muted); }
+.cs-funnel__rate strong { color: var(--ink); }
+@media (max-width: 639.98px) {
+  .cs-funnel li { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  .cs-funnel__label { text-align: left; }
+  .cs-funnel__bar { grid-column: 1 / -1; grid-row: 2; height: 42px; font-size: 17px; }
+  .cs-funnel__rate { text-align: right; }
+}
+.cs-value { margin-top: clamp(32px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 14px clamp(24px, 4vw, 48px); background: var(--ink); color: var(--paper); border-top: 3px solid var(--gold); padding: clamp(24px, 3vw, 36px); }
+.cs-value__num { font-family: var(--display); font-weight: 900; font-size: clamp(48px, 6vw, 80px); line-height: 0.9; letter-spacing: -0.04em; color: var(--gold); font-variant-numeric: tabular-nums; }
+.cs-value p { flex: 1 1 320px; margin: 0; font-size: 16px; line-height: 1.6; color: #c7c7c7; }
+.cs-value p strong { color: var(--paper); }
+/* Case study: results table (scrolls sideways on narrow phones). */
+.cs-table-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--ink); }
+.cs-table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.cs-table th, .cs-table td { padding: 14px clamp(12px, 2vw, 22px); text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.cs-table th:first-child { text-align: left; }
+.cs-table thead th { font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
+.cs-table tbody th { font-weight: 600; }
+.cs-table tfoot th, .cs-table tfoot td { font-family: var(--display); font-weight: 900; border-bottom: 0; }
+.cs-table__muted { color: var(--muted); font-size: 13px; }
+.cs-table__note { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin: 14px 0 0; }
