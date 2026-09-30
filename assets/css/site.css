@@ -775,6 +775,45 @@ img { max-width: 100%; }
 .cs-table tfoot th, .cs-table tfoot td { font-family: var(--display); font-weight: 900; border-bottom: 0; }
 .cs-table__muted { color: var(--muted); font-size: 13px; }
 .cs-table__note { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin: 14px 0 0; }
+/* Case study: leads-per-webinar column chart (rows of horizontal bars on phones). Scale tops out at 250 leads. */
+.wchart { position: relative; margin: 0; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: clamp(20px, 3vw, 36px); }
+.wchart__sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding-bottom: clamp(20px, 2.5vw, 28px); margin-bottom: clamp(20px, 2.5vw, 28px); border-bottom: 1px solid var(--line); }
+.wchart__sum b { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(30px, 3.2vw, 44px); line-height: 1; letter-spacing: -0.03em; }
+.wchart__sum span { display: block; margin-top: 8px; font-size: 13.5px; line-height: 1.4; color: var(--muted); }
+.wchart__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin-bottom: 20px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
+.wchart__key i, .wchart__col.is-live .wchart__bar { background: repeating-linear-gradient(135deg, var(--blue) 0 3px, #cfe0fa 3px 7px); }
+.wchart__key i { display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -2px; border-radius: 2px; }
+.wchart__plot { --h: 240px; position: relative; padding: 0 0 54px 36px; }
+.wchart__grid { position: absolute; left: 0; right: 0; top: 0; height: var(--h); }
+.wchart__grid span { position: absolute; left: 0; right: 0; bottom: calc(var(--y) / 250 * 100%); transform: translateY(50%); display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.wchart__grid span::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.wchart__grid .wchart__base::after { background: var(--ink); }
+.wchart__bars { list-style: none; margin: 0; padding: 0; position: relative; display: flex; height: var(--h); }
+.wchart__col { position: relative; flex: 1 1 0; min-width: 0; height: 100%; outline: none; cursor: default; }
+.wchart__bar { position: absolute; bottom: 0; left: 50%; translate: -50% 0; width: min(24px, 64%); height: calc(var(--v) / 250 * 100%); min-height: 2px; background: var(--blue); border-radius: 4px 4px 0 0; transition: filter .15s ease; }
+.wchart__col:hover .wchart__bar, .wchart__col:focus-visible .wchart__bar { filter: brightness(0.8); }
+.wchart__col:focus-visible { box-shadow: inset 0 0 0 2px var(--blue); border-radius: 4px; }
+.wchart__val { display: none; }
+.wchart__col.is-peak .wchart__val { display: block; position: absolute; left: 0; right: 0; bottom: calc(var(--v) / 250 * 100% + 6px); text-align: center; font-family: var(--display); font-weight: 700; font-size: 13px; }
+.wchart__date { display: none; }
+.wchart__day { position: absolute; top: calc(100% + 10px); left: 0; right: 0; text-align: center; font-size: 12.5px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.wchart__mon { position: absolute; top: calc(100% + 31px); left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.wchart__tip { position: absolute; z-index: 5; min-width: 168px; padding: 12px 14px; background: var(--ink); color: var(--paper); font-size: 13px; line-height: 1.5; box-shadow: 0 12px 28px rgba(0,0,0,0.25); pointer-events: none; }
+.wchart__tip strong { display: block; margin-bottom: 4px; font-family: var(--display); font-size: 15px; }
+.wchart__tip span { display: flex; justify-content: space-between; gap: 16px; color: #c7c7c7; }
+.wchart__tip b { color: var(--paper); font-weight: 600; font-variant-numeric: tabular-nums; }
+.wchart__tip em { display: block; margin-top: 4px; font-style: normal; font-size: 12px; color: #c7c7c7; }
+@media (max-width: 639.98px) {
+  .wchart__sum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wchart__plot { padding: 0; }
+  .wchart__grid, .wchart__day, .wchart__mon { display: none; }
+  .wchart__bars { height: auto; flex-direction: column; gap: 6px; }
+  .wchart__col { display: grid; grid-template-columns: 56px minmax(0, 1fr) 36px; align-items: center; gap: 10px; height: auto; padding: 2px 0; }
+  .wchart__date { display: block; grid-column: 1; grid-row: 1; font-size: 13px; color: var(--text-2); }
+  .wchart__bar { position: static; grid-column: 2; grid-row: 1; translate: none; width: calc(var(--v) / 250 * 100%); height: 16px; border-radius: 0 4px 4px 0; }
+  .wchart__val, .wchart__col.is-peak .wchart__val { display: block; position: static; grid-column: 3; grid-row: 1; text-align: right; font-family: inherit; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; }
+}
+
 /* Case study: pipeline stats on a light background. */
 .cs-pipeline { margin-top: clamp(40px, 5vw, 64px); }
 .cs-pipeline .stat { border-top-color: var(--line); }
