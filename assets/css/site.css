@@ -28,8 +28,8 @@ a:hover { color: var(--blue-dark); }
 img { max-width: 100%; }
 [id] { scroll-margin-top: 68px; }
 
-/* Signal down the machine rail: a ~10s pass, then idle — repeats every 36s, first pass at 1.3s. */
-@keyframes mmSignal { 0% { top: -60px; opacity: 1; } 28% { top: 100%; opacity: 1; } 28.01%, 100% { top: 100%; opacity: 0; } }
+/* Signal down the machine rail: a ~3.2s pass, then idle — repeats every 9s, first pass at 1.3s. */
+@keyframes mmSignal { 0% { top: -60px; opacity: 1; } 36% { top: 100%; opacity: 1; } 36.01%, 100% { top: 100%; opacity: 0; } }
 @keyframes mmLive { 0% { box-shadow: 0 0 0 0 var(--sig); opacity: 1; } 70% { box-shadow: 0 0 0 6px transparent; opacity: .55; } 100% { box-shadow: 0 0 0 0 transparent; opacity: 1; } }
 
 /* ---------- Layout ---------- */
@@ -145,7 +145,7 @@ img { max-width: 100%; }
 .machine__steps { position: relative; padding-left: 26px; }
 .machine__list { list-style: none; margin: 0; padding: 0; }
 .machine__rail { position: absolute; left: 5px; top: 6px; bottom: 16px; width: 1px; background: rgba(255,255,255,0.18); overflow: hidden; }
-.machine__rail i { position: absolute; left: 0; top: -60px; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--sig), transparent); animation: mmSignal 36s linear 1.3s infinite; }
+.machine__rail i { position: absolute; left: 0; top: -60px; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--sig), transparent); animation: mmSignal 9s linear 1.3s infinite; }
 .machine--gold { --sig: var(--gold); --sig-soft: rgba(175,158,101,0.28); }
 .machine__step { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .machine__node { position: absolute; left: 0; width: 11px; height: 11px; border: 1px solid rgba(255,255,255,0.4); background: var(--ink); }
