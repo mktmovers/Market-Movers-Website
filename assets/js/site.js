@@ -234,4 +234,32 @@
     var brand = document.querySelector('.brand');
     if (brand) brand.focus({ preventScroll: true });
   });
+  // Case study charts: show a column's numbers (data-date, data-rows "Label:Value;...", data-flag) on hover, tap or focus.
+  all('[data-wchart]').forEach(function (fig) {
+    var tip = fig.querySelector('.wchart__tip');
+    if (!tip) return;
+    var esc = function (t) { return t.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var show = function (col) {
+      var d = col.dataset;
+      tip.innerHTML = '<strong>' + esc(d.date) + '</strong>' + d.rows.split(';').map(function (row) {
+        var i = row.indexOf(':');
+        return '<span>' + esc(row.slice(0, i)) + '<b>' + esc(row.slice(i + 1)) + '</b></span>';
+      }).join('') + (d.flag ? '<em>' + esc(d.flag) + '</em>' : '');
+      tip.hidden = false;
+      var f = fig.getBoundingClientRect(), bar = col.querySelector('.wchart__bar').getBoundingClientRect();
+      var left = bar.left + bar.width / 2 - f.left - tip.offsetWidth / 2;
+      left = Math.max(8, Math.min(left, f.width - tip.offsetWidth - 8));
+      var top = bar.top - f.top - tip.offsetHeight - 10;
+      if (top < 8) top = bar.bottom - f.top + 10;
+      tip.style.left = left + 'px';
+      tip.style.top = top + 'px';
+    };
+    var hide = function () { tip.hidden = true; };
+    fig.querySelectorAll('.wchart__col').forEach(function (col) {
+      col.addEventListener('pointerenter', function () { show(col); });
+      col.addEventListener('focus', function () { show(col); });
+      col.addEventListener('pointerleave', hide);
+      col.addEventListener('blur', hide);
+    });
+  });
 })();

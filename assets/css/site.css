@@ -766,17 +766,10 @@ img { max-width: 100%; }
 .cs-value p { flex: 1 1 320px; margin: 0; font-size: 16px; line-height: 1.6; color: #c7c7c7; }
 .cs-value p strong { color: var(--paper); }
 /* Case study: results table (scrolls sideways on narrow phones). */
-.cs-table-wrap { overflow-x: auto; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--ink); }
-.cs-table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
-.cs-table th, .cs-table td { padding: 14px clamp(12px, 2vw, 22px); text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
-.cs-table th:first-child { text-align: left; }
-.cs-table thead th { font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
-.cs-table tbody th { font-weight: 600; }
-.cs-table tfoot th, .cs-table tfoot td { font-family: var(--display); font-weight: 900; border-bottom: 0; }
-.cs-table__muted { color: var(--muted); font-size: 13px; }
 .cs-table__note { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin: 14px 0 0; }
-/* Case study: leads-per-webinar column chart (rows of horizontal bars on phones). Scale tops out at 250 leads. */
-.wchart { position: relative; margin: 0; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: clamp(20px, 3vw, 36px); }
+/* Case study charts. .wchart: column chart per webinar (rows of horizontal bars on phones); --max sets the top of the scale.
+   .wchart--pair adds a second (gold) bar per webinar. .dchart: labelled horizontal bars per row, with an optional dashed --avg line. */
+.wchart { --chart-gold: #a3801a; position: relative; margin: 0; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: clamp(20px, 3vw, 36px); }
 .wchart__sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding-bottom: clamp(20px, 2.5vw, 28px); margin-bottom: clamp(20px, 2.5vw, 28px); border-bottom: 1px solid var(--line); }
 .wchart__sum b { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(30px, 3.2vw, 44px); line-height: 1; letter-spacing: -0.03em; }
 .wchart__sum span { display: block; margin-top: 8px; font-size: 13.5px; line-height: 1.4; color: var(--muted); }
@@ -785,16 +778,16 @@ img { max-width: 100%; }
 .wchart__key i { display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -2px; border-radius: 2px; }
 .wchart__plot { --h: 240px; position: relative; padding: 0 0 54px 36px; }
 .wchart__grid { position: absolute; left: 0; right: 0; top: 0; height: var(--h); }
-.wchart__grid span { position: absolute; left: 0; right: 0; bottom: calc(var(--y) / 250 * 100%); transform: translateY(50%); display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.wchart__grid span { position: absolute; left: 0; right: 0; bottom: calc(var(--y) / var(--max, 250) * 100%); transform: translateY(50%); display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .wchart__grid span::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .wchart__grid .wchart__base::after { background: var(--ink); }
 .wchart__bars { list-style: none; margin: 0; padding: 0; position: relative; display: flex; height: var(--h); }
 .wchart__col { position: relative; flex: 1 1 0; min-width: 0; height: 100%; outline: none; cursor: default; }
-.wchart__bar { position: absolute; bottom: 0; left: 50%; translate: -50% 0; width: min(24px, 64%); height: calc(var(--v) / 250 * 100%); min-height: 2px; background: var(--blue); border-radius: 4px 4px 0 0; transition: filter .15s ease; }
+.wchart__bar { position: absolute; bottom: 0; left: 50%; translate: -50% 0; width: min(24px, 64%); height: calc(var(--v) / var(--max, 250) * 100%); min-height: 2px; background: var(--blue); border-radius: 4px 4px 0 0; transition: filter .15s ease; }
 .wchart__col:hover .wchart__bar, .wchart__col:focus-visible .wchart__bar { filter: brightness(0.8); }
 .wchart__col:focus-visible { box-shadow: inset 0 0 0 2px var(--blue); border-radius: 4px; }
 .wchart__val { display: none; }
-.wchart__col.is-peak .wchart__val { display: block; position: absolute; left: 0; right: 0; bottom: calc(var(--v) / 250 * 100% + 6px); text-align: center; font-family: var(--display); font-weight: 700; font-size: 13px; }
+.wchart__col.is-peak .wchart__val { display: block; position: absolute; left: 0; right: 0; bottom: calc(var(--v) / var(--max, 250) * 100% + 6px); text-align: center; font-family: var(--display); font-weight: 700; font-size: 13px; }
 .wchart__date { display: none; }
 .wchart__day { position: absolute; top: calc(100% + 10px); left: 0; right: 0; text-align: center; font-size: 12.5px; color: var(--text-2); font-variant-numeric: tabular-nums; }
 .wchart__mon { position: absolute; top: calc(100% + 31px); left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
@@ -803,6 +796,29 @@ img { max-width: 100%; }
 .wchart__tip span { display: flex; justify-content: space-between; gap: 16px; color: #c7c7c7; }
 .wchart__tip b { color: var(--paper); font-weight: 600; font-variant-numeric: tabular-nums; }
 .wchart__tip em { display: block; margin-top: 4px; font-style: normal; font-size: 12px; color: #c7c7c7; }
+.wchart__keys { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.wchart__key--a i { background: var(--blue); }
+.wchart__key--b i { background: var(--chart-gold); }
+.wchart--pair .wchart__bar { width: min(20px, 34%); translate: calc(-100% - 1px) 0; }
+.wchart--pair .wchart__bar--b { translate: 1px 0; background: var(--chart-gold); }
+.wchart--pair .is-live .wchart__bar { translate: -50% 0; }
+.dchart__rows { list-style: none; margin: 0; padding: 0; }
+.dchart__row, .dchart__scale { display: grid; grid-template-columns: minmax(150px, 240px) minmax(0, 1fr) 84px; gap: 18px; align-items: center; }
+.dchart--nofee .dchart__row, .dchart--nofee .dchart__scale { grid-template-columns: minmax(150px, 240px) minmax(0, 1fr); }
+.dchart__row { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.dchart__who b { display: block; font-family: var(--display); font-weight: 700; font-size: 15.5px; letter-spacing: -0.01em; }
+.dchart__who small { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); }
+.dchart__track { --w: calc(100% - 72px); position: relative; height: 22px; }
+.dchart__track::before { content: ""; position: absolute; top: -13px; bottom: -13px; left: calc(var(--avg, -100) / var(--max) * var(--w)); border-left: 2px dashed rgba(0,0,0,0.35); }
+.dchart__bar { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--v) / var(--max) * var(--w)); background: var(--blue); border-radius: 0 4px 4px 0; }
+.dchart__days { position: absolute; top: 50%; translate: 0 -50%; left: calc(var(--v) / var(--max) * var(--w) + 6px); z-index: 1; padding: 0 4px; background: var(--paper); font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dchart__fee { text-align: right; font-family: var(--display); font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; }
+.dchart__scale { margin-top: 10px; }
+.dchart__ticks { position: relative; height: 14px; margin-right: 72px; }
+.dchart__ticks i { position: absolute; left: calc(var(--t) / var(--max) * 100%); translate: -50% 0; font-style: normal; font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.dchart__ticks i:first-child { translate: 0 0; }
+.dchart__ticks i:last-child { translate: -100% 0; }
+.dchart__avgkey i { width: 0; height: 12px; background: none; border-left: 2px dashed rgba(0,0,0,0.5); border-radius: 0; }
 @media (max-width: 639.98px) {
   .wchart__sum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wchart__plot { padding: 0; }
@@ -810,8 +826,20 @@ img { max-width: 100%; }
   .wchart__bars { height: auto; flex-direction: column; gap: 6px; }
   .wchart__col { display: grid; grid-template-columns: 56px minmax(0, 1fr) 36px; align-items: center; gap: 10px; height: auto; padding: 2px 0; }
   .wchart__date { display: block; grid-column: 1; grid-row: 1; font-size: 13px; color: var(--text-2); }
-  .wchart__bar { position: static; grid-column: 2; grid-row: 1; translate: none; width: calc(var(--v) / 250 * 100%); height: 16px; border-radius: 0 4px 4px 0; }
+  .wchart__bar { position: static; grid-column: 2; grid-row: 1; translate: none; width: calc(var(--v) / var(--max, 250) * 100%); height: 16px; border-radius: 0 4px 4px 0; }
   .wchart__val, .wchart__col.is-peak .wchart__val { display: block; position: static; grid-column: 3; grid-row: 1; text-align: right; font-family: inherit; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .wchart--pair .wchart__col { grid-template-rows: auto auto; row-gap: 3px; }
+  .wchart--pair .wchart__date { grid-row: 1 / span 2; }
+  .wchart--pair .wchart__bar, .wchart--pair .is-live .wchart__bar { width: calc(var(--v) / var(--max, 250) * 100%); height: 12px; translate: none; }
+  .wchart--pair .wchart__bar--b { grid-row: 2; }
+  .wchart--pair .wchart__val--b { grid-row: 2; }
+  .dchart__row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 8px; }
+  .dchart--nofee .dchart__row { grid-template-columns: minmax(0, 1fr); }
+  .dchart__who { grid-column: 1 / -1; }
+  .dchart__scale { grid-template-columns: minmax(0, 1fr) 84px; }
+  .dchart--nofee .dchart__scale { grid-template-columns: minmax(0, 1fr); }
+  .dchart__scale > span:first-child { display: none; }
+  .dchart__track::before { top: -4px; bottom: -4px; }
 }
 
 /* Case study: pipeline stats on a light background. */
