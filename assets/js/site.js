@@ -21,7 +21,7 @@
   var all = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
   var belowFold = function (el) { return el.getBoundingClientRect().top > window.innerHeight * 0.92; };
 
-  // Mobile menu (shown under 900px via CSS).
+  // Mobile menu (shown under 1100px via CSS).
   var header = document.querySelector('.site-header');
   var menuBtn = header && header.querySelector('.menu-btn');
   if (menuBtn) {
@@ -34,7 +34,7 @@
     header.querySelectorAll('.mobile-nav a').forEach(function (a) {
       a.addEventListener('click', function () { setOpen(false); });
     });
-    window.addEventListener('resize', function () { if (window.innerWidth >= 900) setOpen(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 1100) setOpen(false); });
   }
 
   // Menu dropdowns (Services, Case Studies): hover opens via CSS; click / Enter toggles; Escape, outside click or tabbing away closes.

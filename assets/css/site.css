@@ -118,7 +118,8 @@ img { max-width: 100%; }
 .mobile-nav a.mobile-nav__sub[aria-current="page"] { color: var(--gold); border-left-color: var(--gold); }
 .mobile-nav a.mobile-nav__sub:last-of-type { margin-bottom: 8px; }
 .mobile-nav a.mobile-nav__cta { margin-top: 20px; text-align: center; background: var(--blue); font-size: 15px; font-weight: 700; padding: 15px 24px; border-radius: 40px; border-bottom: 0; }
-@media (max-width: 899.98px) {
+/* The full menu needs about 1080px before it reaches the logo, so narrower screens get the Menu button. */
+@media (max-width: 1099.98px) {
   .nav, .site-header__cta { display: none; }
   .menu-btn { display: flex; }
   .site-header.is-open .mobile-nav { display: block; }
