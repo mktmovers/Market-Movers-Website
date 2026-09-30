@@ -50,11 +50,13 @@ img { max-width: 100%; }
 .eyebrow--gold { color: var(--gold); }
 /* Homepage hero: clickable webinar promo pill, centred above the hero content. */
 .hero-promo-row { position: relative; max-width: 1240px; margin: calc(-1 * clamp(20px, 3vw, 44px)) auto clamp(32px, 4vw, 52px); text-align: center; }
-.hero-promo { --sig: var(--gold); display: inline-flex; align-items: center; gap: 12px; max-width: 100%; padding: 9px 18px 9px 14px; text-align: left; border: 1px solid rgba(175,158,101,0.55); border-radius: 22px; background: rgba(175,158,101,0.1); color: var(--paper); font-size: 13.5px; line-height: 1.45; transition: background-color .2s ease, border-color .2s ease; }
+.hero-promo { --sig: var(--gold); display: inline-flex; align-items: center; gap: 12px; max-width: 100%; padding: 10px 20px 10px 16px; text-align: left; border: 1px solid rgba(175,158,101,0.55); border-radius: 22px; background: rgba(175,158,101,0.1); color: var(--paper); font-size: 13.5px; line-height: 1.45; transition: background-color .2s ease, border-color .2s ease; }
 .hero-promo:hover, .hero-promo:focus-visible { background: rgba(175,158,101,0.22); border-color: var(--gold); color: var(--paper); }
 .hero-promo__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex: none; animation: mmLive 2.4s ease-in-out infinite; }
-.hero-promo__text b { color: var(--gold); font-weight: 700; margin-right: 4px; }
-.hero-promo__cta { font-weight: 700; white-space: nowrap; }
+.hero-promo__text { display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 14px; }
+.hero-promo__meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.hero-promo__name { font-family: var(--display); font-weight: 900; font-size: 18px; letter-spacing: -0.015em; color: var(--paper); }
+.hero-promo__cta { font-weight: 700; color: var(--gold); white-space: nowrap; }
 .hero-promo__cta span { display: inline-block; transition: transform .2s ease; }
 .hero-promo:hover .hero-promo__cta span { transform: translateX(3px); }
 @media (prefers-reduced-motion: reduce) { .hero-promo__dot { animation: none; } }
