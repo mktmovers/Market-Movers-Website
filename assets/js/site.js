@@ -21,6 +21,12 @@
   var all = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
   var belowFold = function (el) { return el.getBoundingClientRect().top > window.innerHeight * 0.92; };
 
+  // Time-limited promos (e.g. the next webinar): hide from their data-until date (YYYY-MM-DD, local time).
+  all('[data-until]').forEach(function (el) {
+    var p = el.getAttribute('data-until').split('-');
+    if (new Date() >= new Date(+p[0], +p[1] - 1, +p[2])) el.hidden = true;
+  });
+
   // Mobile menu (shown under 1100px via CSS).
   var header = document.querySelector('.site-header');
   var menuBtn = header && header.querySelector('.menu-btn');
