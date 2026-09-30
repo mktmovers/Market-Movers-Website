@@ -198,24 +198,40 @@
   <div class="wrap">
     <div class="eyebrow">By webinar</div>
     <h2 class="h2" id="webinars-h">Five webinars, one quarter.</h2>
-    <div class="cs-table-wrap">
-      <table class="cs-table">
-        <thead>
-          <tr><th scope="col">Webinar</th><th scope="col">Impressions</th><th scope="col">Registrations</th><th scope="col">Attended live</th><th scope="col">Cost / reg.</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Jul 15</th><td>31,885</td><td>170</td><td>111</td><td>$5.09</td></tr>
-          <tr><th scope="row">Jul 30</th><td>76,427</td><td>190</td><td>70</td><td>$7.22</td></tr>
-          <tr><th scope="row">Aug 19</th><td>34,307</td><td>108</td><td>50</td><td>$8.44</td></tr>
-          <tr><th scope="row">Sep 10</th><td>35,808</td><td>101</td><td>47</td><td>$11.38</td></tr>
-          <tr><th scope="row">Sep 30</th><td>12,842</td><td>36</td><td class="cs-table__muted">Upcoming</td><td>$12.04</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><th scope="row">Total</th><td>191,269</td><td>605</td><td>278</td><td>$7.82</td></tr>
-        </tfoot>
-      </table>
-    </div>
-    <p class="cs-table__note">Cost per registration counts capture spend only ($4,732 of the $4,920 total); retargeting is reported separately. Sep 30 shows sign-ups as of September 23.</p>
+    <figure class="wchart wchart--pair" data-wchart style="--max:200">
+      <div class="wchart__sum">
+        <div><b>605</b><span>Registrations across 5 webinars</span></div>
+        <div><b>278</b><span>Attended live</span></div>
+        <div><b>49%</b><span>Of registrants showed up</span></div>
+        <div><b>$7.82</b><span>Average cost per registration</span></div>
+      </div>
+      <div class="wchart__head">
+        <span>People per webinar</span>
+        <span class="wchart__keys"><span class="wchart__key wchart__key--a"><i aria-hidden="true"></i>Registered</span><span class="wchart__key wchart__key--b"><i aria-hidden="true"></i>Attended live</span><span class="wchart__key"><i aria-hidden="true"></i>Upcoming (Sep 30)</span></span>
+      </div>
+      <div class="wchart__plot">
+        <div class="wchart__grid" aria-hidden="true"><span style="--y:200">200</span><span style="--y:100">100</span><span class="wchart__base" style="--y:0">0</span></div>
+        <ol class="wchart__bars" aria-label="Registrations and live attendance per webinar">
+        <li class="wchart__col" tabindex="0" style="--v:170" data-date="Jul 15" data-rows="Registered:170;Attended live:111;Show-up rate:65%;Impressions:31,885;Cost per registration:$5.09" aria-label="Jul 15: 170 registered, 111 attended live, 31,885 impressions, $5.09 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">170</span><span class="wchart__bar wchart__bar--b" style="--v:111"></span><span class="wchart__val wchart__val--b">111</span><span class="wchart__date">Jul 15</span><span class="wchart__day">15</span><span class="wchart__mon">Jul</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:190" data-date="Jul 30" data-rows="Registered:190;Attended live:70;Show-up rate:37%;Impressions:76,427;Cost per registration:$7.22" aria-label="Jul 30: 190 registered, 70 attended live, 76,427 impressions, $7.22 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">190</span><span class="wchart__bar wchart__bar--b" style="--v:70"></span><span class="wchart__val wchart__val--b">70</span><span class="wchart__date">Jul 30</span><span class="wchart__day">30</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:108" data-date="Aug 19" data-rows="Registered:108;Attended live:50;Show-up rate:46%;Impressions:34,307;Cost per registration:$8.44" aria-label="Aug 19: 108 registered, 50 attended live, 34,307 impressions, $8.44 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">108</span><span class="wchart__bar wchart__bar--b" style="--v:50"></span><span class="wchart__val wchart__val--b">50</span><span class="wchart__date">Aug 19</span><span class="wchart__day">19</span><span class="wchart__mon">Aug</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:101" data-date="Sep 10" data-rows="Registered:101;Attended live:47;Show-up rate:47%;Impressions:35,808;Cost per registration:$11.38" aria-label="Sep 10: 101 registered, 47 attended live, 35,808 impressions, $11.38 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">101</span><span class="wchart__bar wchart__bar--b" style="--v:47"></span><span class="wchart__val wchart__val--b">47</span><span class="wchart__date">Sep 10</span><span class="wchart__day">10</span><span class="wchart__mon">Sep</span>
+        </li>
+        <li class="wchart__col is-live" tabindex="0" style="--v:36" data-date="Sep 30" data-rows="Registered:36;Attended live:Upcoming;Show-up rate:–;Impressions:12,842;Cost per registration:$12.04" data-flag="Webinar still to come; sign-ups so far" aria-label="Sep 30: 36 registered, upcoming, 12,842 impressions, $12.04 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">36</span><span class="wchart__date">Sep 30</span><span class="wchart__day">30</span>
+        </li>
+        </ol>
+      </div>
+      <div class="wchart__tip" aria-hidden="true" hidden></div>
+    </figure>
+    <p class="cs-table__note">Hover or tap a webinar for its impressions, show-up rate and cost per registration. Cost per registration counts capture spend only ($4,732 of the $4,920 total); retargeting is reported separately. The striped Sep 30 bar shows sign-ups as of September 23, before the webinar ran.</p>
   </div>
 </section>
 

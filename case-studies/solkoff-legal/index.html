@@ -211,25 +211,52 @@
   <div class="wrap">
     <div class="eyebrow">Signed clients</div>
     <h2 class="h2" id="clients-h">Six clients, about four weeks from webinar to signed.</h2>
-    <div class="cs-table-wrap">
-      <table class="cs-table">
-        <thead>
-          <tr><th scope="col">Client</th><th scope="col">From webinar</th><th scope="col">Signed</th><th scope="col">Days to sign</th><th scope="col">Fee</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Client 1</th><td>Apr 2</td><td>Apr 15</td><td>13</td><td>$9,000</td></tr>
-          <tr><th scope="row">Client 2</th><td>Apr 2</td><td>Apr 22</td><td>20</td><td>$3,600</td></tr>
-          <tr><th scope="row">Client 3</th><td>Apr 2</td><td>Apr 27</td><td>25</td><td>$7,500</td></tr>
-          <tr><th scope="row">Client 4</th><td>Apr 2</td><td>May 27</td><td>55</td><td>$2,800</td></tr>
-          <tr><th scope="row">Client 5</th><td>Jun 11</td><td>Jul 1</td><td>20</td><td>$4,000</td></tr>
-          <tr><th scope="row">Client 6</th><td>Aug 6</td><td>Sep 13</td><td>38</td><td>$3,600</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><th scope="row">Total</th><td>3 webinars</td><td></td><td>~29 avg.</td><td>$30,500</td></tr>
-        </tfoot>
-      </table>
-    </div>
-    <p class="cs-table__note">Client names are withheld for privacy. The first webinar alone produced four clients.</p>
+    <figure class="wchart dchart" style="--max:60; --avg:29">
+      <div class="wchart__sum">
+        <div><b>$30,500</b><span>In fees from 6 new clients</span></div>
+        <div><b>~29</b><span>Average days from webinar to signed</span></div>
+        <div><b>13</b><span>Fastest, in days · Client 1</span></div>
+        <div><b>4</b><span>Clients from the first webinar alone</span></div>
+      </div>
+      <div class="wchart__head">
+        <span>Days from webinar to signed</span>
+        <span class="wchart__keys"><span class="wchart__key dchart__avgkey"><i aria-hidden="true"></i>29-day average</span><span>Fee</span></span>
+      </div>
+      <ol class="dchart__rows" aria-label="Days from webinar to signed, and fee, for each client">
+        <li class="dchart__row" style="--v:13">
+          <span class="dchart__who"><b>Client 1</b><small>Apr 2 webinar → signed Apr 15</small></span>
+          <span class="dchart__track"><i class="dchart__bar"></i><span class="dchart__days">13 days</span></span>
+          <span class="dchart__fee">$9,000</span>
+        </li>
+        <li class="dchart__row" style="--v:20">
+          <span class="dchart__who"><b>Client 2</b><small>Apr 2 webinar → signed Apr 22</small></span>
+          <span class="dchart__track"><i class="dchart__bar"></i><span class="dchart__days">20 days</span></span>
+          <span class="dchart__fee">$3,600</span>
+        </li>
+        <li class="dchart__row" style="--v:25">
+          <span class="dchart__who"><b>Client 3</b><small>Apr 2 webinar → signed Apr 27</small></span>
+          <span class="dchart__track"><i class="dchart__bar"></i><span class="dchart__days">25 days</span></span>
+          <span class="dchart__fee">$7,500</span>
+        </li>
+        <li class="dchart__row" style="--v:55">
+          <span class="dchart__who"><b>Client 4</b><small>Apr 2 webinar → signed May 27</small></span>
+          <span class="dchart__track"><i class="dchart__bar"></i><span class="dchart__days">55 days</span></span>
+          <span class="dchart__fee">$2,800</span>
+        </li>
+        <li class="dchart__row" style="--v:20">
+          <span class="dchart__who"><b>Client 5</b><small>Jun 11 webinar → signed Jul 1</small></span>
+          <span class="dchart__track"><i class="dchart__bar"></i><span class="dchart__days">20 days</span></span>
+          <span class="dchart__fee">$4,000</span>
+        </li>
+        <li class="dchart__row" style="--v:38">
+          <span class="dchart__who"><b>Client 6</b><small>Aug 6 webinar → signed Sep 13</small></span>
+          <span class="dchart__track"><i class="dchart__bar"></i><span class="dchart__days">38 days</span></span>
+          <span class="dchart__fee">$3,600</span>
+        </li>
+      </ol>
+      <div class="dchart__scale" aria-hidden="true"><span></span><span class="dchart__ticks"><i style="--t:0">0</i><i style="--t:30">30</i><i style="--t:60">60 days</i></span><span></span></div>
+    </figure>
+    <p class="cs-table__note">Client names are withheld for privacy. The first webinar alone (Apr 2) produced four clients.</p>
 
     <div class="stats cs-stats cs-pipeline" aria-label="Pipeline in progress">
       <div class="stat"><div class="stat__value">17</div><div class="stat__bar"></div><div class="stat__label">Leads still in progress</div><div class="stat__note">From the Jul 23 – Sep 10 webinars, as of Sep 24</div></div>
@@ -244,26 +271,46 @@
   <div class="wrap">
     <div class="eyebrow">By webinar</div>
     <h2 class="h2" id="webinars-h">Seven webinars in six months.</h2>
-    <div class="cs-table-wrap">
-      <table class="cs-table">
-        <thead>
-          <tr><th scope="col">Webinar</th><th scope="col">Impressions</th><th scope="col">Registrations</th><th scope="col">Attended live</th><th scope="col">Cost / reg.</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Apr 2</th><td>24,855</td><td>47</td><td>20</td><td>$10.65</td></tr>
-          <tr><th scope="row">Jun 11</th><td>24,834</td><td>69</td><td>29</td><td>$12.96</td></tr>
-          <tr><th scope="row">Jul 23</th><td>35,644</td><td>82</td><td>25</td><td>$12.39</td></tr>
-          <tr><th scope="row">Aug 6</th><td>43,128</td><td>124</td><td>37</td><td>$8.90</td></tr>
-          <tr><th scope="row">Aug 27</th><td>26,751</td><td>77</td><td>28</td><td>$12.20</td></tr>
-          <tr><th scope="row">Sep 10</th><td>16,049</td><td>65</td><td>26</td><td>$11.99</td></tr>
-          <tr><th scope="row">Sep 24</th><td>24,224</td><td>116</td><td class="cs-table__muted">Upcoming</td><td>$8.61</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><th scope="row">Total</th><td>195,485</td><td>580</td><td>165</td><td>$10.75</td></tr>
-        </tfoot>
-      </table>
-    </div>
-    <p class="cs-table__note">Cost per registration counts capture spend only ($6,232); post-webinar remarketing is reported separately. Sep 24 shows sign-ups as of September 23.</p>
+    <figure class="wchart wchart--pair" data-wchart style="--max:150">
+      <div class="wchart__sum">
+        <div><b>580</b><span>Registrations across 7 webinars</span></div>
+        <div><b>165</b><span>Attended live</span></div>
+        <div><b>$10.75</b><span>Average cost per registration</span></div>
+        <div><b>124</b><span>Most registrations · Aug 6</span></div>
+      </div>
+      <div class="wchart__head">
+        <span>People per webinar</span>
+        <span class="wchart__keys"><span class="wchart__key wchart__key--a"><i aria-hidden="true"></i>Registered</span><span class="wchart__key wchart__key--b"><i aria-hidden="true"></i>Attended live</span><span class="wchart__key"><i aria-hidden="true"></i>Upcoming (Sep 24)</span></span>
+      </div>
+      <div class="wchart__plot">
+        <div class="wchart__grid" aria-hidden="true"><span style="--y:150">150</span><span style="--y:100">100</span><span style="--y:50">50</span><span class="wchart__base" style="--y:0">0</span></div>
+        <ol class="wchart__bars" aria-label="Registrations and live attendance per webinar">
+        <li class="wchart__col" tabindex="0" style="--v:47" data-date="Apr 2" data-rows="Registered:47;Attended live:20;Show-up rate:43%;Impressions:24,855;Cost per registration:$10.65" aria-label="Apr 2: 47 registered, 20 attended live, 24,855 impressions, $10.65 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">47</span><span class="wchart__bar wchart__bar--b" style="--v:20"></span><span class="wchart__val wchart__val--b">20</span><span class="wchart__date">Apr 2</span><span class="wchart__day">2</span><span class="wchart__mon">Apr</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:69" data-date="Jun 11" data-rows="Registered:69;Attended live:29;Show-up rate:42%;Impressions:24,834;Cost per registration:$12.96" aria-label="Jun 11: 69 registered, 29 attended live, 24,834 impressions, $12.96 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">69</span><span class="wchart__bar wchart__bar--b" style="--v:29"></span><span class="wchart__val wchart__val--b">29</span><span class="wchart__date">Jun 11</span><span class="wchart__day">11</span><span class="wchart__mon">Jun</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:82" data-date="Jul 23" data-rows="Registered:82;Attended live:25;Show-up rate:30%;Impressions:35,644;Cost per registration:$12.39" aria-label="Jul 23: 82 registered, 25 attended live, 35,644 impressions, $12.39 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">82</span><span class="wchart__bar wchart__bar--b" style="--v:25"></span><span class="wchart__val wchart__val--b">25</span><span class="wchart__date">Jul 23</span><span class="wchart__day">23</span><span class="wchart__mon">Jul</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:124" data-date="Aug 6" data-rows="Registered:124;Attended live:37;Show-up rate:30%;Impressions:43,128;Cost per registration:$8.90" aria-label="Aug 6: 124 registered, 37 attended live, 43,128 impressions, $8.90 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">124</span><span class="wchart__bar wchart__bar--b" style="--v:37"></span><span class="wchart__val wchart__val--b">37</span><span class="wchart__date">Aug 6</span><span class="wchart__day">6</span><span class="wchart__mon">Aug</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:77" data-date="Aug 27" data-rows="Registered:77;Attended live:28;Show-up rate:36%;Impressions:26,751;Cost per registration:$12.20" aria-label="Aug 27: 77 registered, 28 attended live, 26,751 impressions, $12.20 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">77</span><span class="wchart__bar wchart__bar--b" style="--v:28"></span><span class="wchart__val wchart__val--b">28</span><span class="wchart__date">Aug 27</span><span class="wchart__day">27</span>
+        </li>
+        <li class="wchart__col" tabindex="0" style="--v:65" data-date="Sep 10" data-rows="Registered:65;Attended live:26;Show-up rate:40%;Impressions:16,049;Cost per registration:$11.99" aria-label="Sep 10: 65 registered, 26 attended live, 16,049 impressions, $11.99 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">65</span><span class="wchart__bar wchart__bar--b" style="--v:26"></span><span class="wchart__val wchart__val--b">26</span><span class="wchart__date">Sep 10</span><span class="wchart__day">10</span><span class="wchart__mon">Sep</span>
+        </li>
+        <li class="wchart__col is-live" tabindex="0" style="--v:116" data-date="Sep 24" data-rows="Registered:116;Attended live:Upcoming;Show-up rate:–;Impressions:24,224;Cost per registration:$8.61" data-flag="Webinar still to come; sign-ups so far" aria-label="Sep 24: 116 registered, upcoming, 24,224 impressions, $8.61 per registration">
+          <span class="wchart__bar"></span><span class="wchart__val">116</span><span class="wchart__date">Sep 24</span><span class="wchart__day">24</span>
+        </li>
+        </ol>
+      </div>
+      <div class="wchart__tip" aria-hidden="true" hidden></div>
+    </figure>
+    <p class="cs-table__note">Hover or tap a webinar for its impressions, show-up rate and cost per registration. Cost per registration counts capture spend only ($6,232); post-webinar remarketing is reported separately. The striped Sep 24 bar shows sign-ups as of September 23, before the webinar ran.</p>
   </div>
 </section>
 
