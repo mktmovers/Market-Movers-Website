@@ -93,16 +93,21 @@
   <div class="hero-grid">
     <div>
       <div class="eyebrow eyebrow--gold intro" style="margin-bottom:22px; --d:0s">Performance Marketing</div>
-      <h1 class="h1" id="hero-h1">We make money, by making you money</h1>
+      <h1 class="h1" id="hero-h1">We make money, by making <span class="h1-accent">you</span> money</h1>
       <script>
         // Split the headline into words and stagger them left-to-right, top-to-bottom (0.15s start, 0.06s apart).
         (function () {
           var h = document.getElementById('hero-h1');
           if (!document.documentElement.classList.contains('mm-intro')) return;
-          var words = h.textContent.trim().split(/\s+/);
-          h.setAttribute('aria-label', words.join(' '));
-          h.innerHTML = words.map(function (w, i) {
-            return '<span class="intro-word" aria-hidden="true" style="--d:' + (0.15 + i * 0.06).toFixed(2) + 's">' + w + '</span>';
+          // Words inside .h1-accent keep their accent colour.
+          var words = [];
+          h.childNodes.forEach(function (n) {
+            var accent = n.nodeType === 1 && n.classList.contains('h1-accent');
+            n.textContent.trim().split(/\s+/).forEach(function (w) { if (w) words.push({ w: w, accent: accent }); });
+          });
+          h.setAttribute('aria-label', words.map(function (x) { return x.w; }).join(' '));
+          h.innerHTML = words.map(function (x, i) {
+            return '<span class="intro-word' + (x.accent ? ' h1-accent' : '') + '" aria-hidden="true" style="--d:' + (0.15 + i * 0.06).toFixed(2) + 's">' + x.w + '</span>';
           }).join(' ');
         })();
       </script>
