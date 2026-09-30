@@ -48,10 +48,10 @@ img { max-width: 100%; }
 /* ---------- Type ---------- */
 .eyebrow { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 15px; color: var(--blue); margin-bottom: 18px; }
 .eyebrow--gold { color: var(--gold); }
-/* Homepage hero: clickable webinar promo pill above the eyebrow. */
-.hero-promo { --sig: var(--gold); display: inline-flex; align-items: center; gap: 12px; max-width: 100%; margin-bottom: 26px; padding: 9px 18px 9px 14px; border: 1px solid rgba(175,158,101,0.55); border-radius: 22px; background: rgba(175,158,101,0.1); color: var(--paper); font-size: 13.5px; line-height: 1.45; transition: background-color .2s ease, border-color .2s ease; }
+/* Homepage hero: clickable webinar promo pill, centred above the hero content. */
+.hero-promo-row { position: relative; max-width: 1240px; margin: calc(-1 * clamp(20px, 3vw, 44px)) auto clamp(32px, 4vw, 52px); text-align: center; }
+.hero-promo { --sig: var(--gold); display: inline-flex; align-items: center; gap: 12px; max-width: 100%; padding: 9px 18px 9px 14px; text-align: left; border: 1px solid rgba(175,158,101,0.55); border-radius: 22px; background: rgba(175,158,101,0.1); color: var(--paper); font-size: 13.5px; line-height: 1.45; transition: background-color .2s ease, border-color .2s ease; }
 .hero-promo:hover, .hero-promo:focus-visible { background: rgba(175,158,101,0.22); border-color: var(--gold); color: var(--paper); }
-.hero-promo[hidden] { display: none; }
 .hero-promo__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex: none; animation: mmLive 2.4s ease-in-out infinite; }
 .hero-promo__text b { color: var(--gold); font-weight: 700; margin-right: 4px; }
 .hero-promo__cta { font-weight: 700; white-space: nowrap; }

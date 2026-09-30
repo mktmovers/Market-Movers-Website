@@ -33,7 +33,7 @@ To preview locally, run `python3 -m http.server` in this folder and open http://
 ## Still to fill in
 
 - **Group-chat screenshots.** The section is hidden for now; search for `Chat proof:`. Add the three images to `assets/img/`, then remove the `hidden` attribute.
-- **Webinar sign-up link.** The "Full Room, Full Calendar" pill at the top of the homepage hero points to a placeholder. Search `webinar-signup-link-needed` in `index.html` and swap in the sign-up URL. It hides itself from its `data-until` date; update the date, title and `data-until` for the next session.
+- **Webinar sign-up link.** The "Full Room, Full Calendar" pill centred at the top of the homepage hero points to a placeholder. Search `webinar-signup-link-needed` in `index.html` and swap in the sign-up URL. It hides itself from its `data-until` date; update the date, title and `data-until` for the next session.
 - **Community waitlist link.** Every `data-waitlist` button in `community/index.html` points to `#top`. Swap in the Circle or GHL URL when it exists.
 - **Privacy policy.** Filled in for Market Movers Agency LLC and live without the draft banner, but still set to `noindex` and left out of `sitemap.xml` until counsel reviews it; flip both back once it is approved. If you add analytics or ad pixels, list them in section 7.
 - **Map markers.** The cities are illustrative. Edit `MARKERS` in `assets/js/us-map.js`.
