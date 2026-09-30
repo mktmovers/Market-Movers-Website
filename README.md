@@ -17,7 +17,7 @@ This is the static marketing site built from the Claude Design redesign. It's pl
 | `/course-creators/` | `course-creators/index.html` |
 | `/free-tools/` | `free-tools/index.html` |
 | `/community/` | `community/index.html` |
-| `/privacy/` | `privacy/index.html` (draft for legal review) |
+| `/privacy/` | `privacy/index.html` (awaiting legal review; noindex) |
 
 Shared files:
 - `assets/css/site.css` holds the brand tokens and all component styles.
@@ -34,7 +34,7 @@ To preview locally, run `python3 -m http.server` in this folder and open http://
 
 - **Group-chat screenshots.** The section is hidden for now; search for `Chat proof:`. Add the three images to `assets/img/`, then remove the `hidden` attribute.
 - **Community waitlist link.** Every `data-waitlist` button in `community/index.html` points to `#top`. Swap in the Circle or GHL URL when it exists.
-- **Privacy policy.** Fill in the [bracketed] items and have counsel review it. It is set to `noindex` and left out of `sitemap.xml` until then; flip both back once it is approved.
+- **Privacy policy.** Filled in for Market Movers Agency LLC and live without the draft banner, but still set to `noindex` and left out of `sitemap.xml` until counsel reviews it; flip both back once it is approved. If you add analytics or ad pixels, list them in section 7.
 - **Map markers.** The cities are illustrative. Edit `MARKERS` in `assets/js/us-map.js`.
 - **Client names** in the "Trusted by" strip need to be confirmed.
 - **Social share image.** `assets/img/og-image.jpg` (1200×630) is wired into every page's `og:image` / `twitter:image`. Swap the file to change it.
