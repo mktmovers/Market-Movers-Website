@@ -34,7 +34,6 @@ To preview locally, run `python3 -m http.server` in this folder and open http://
 
 - **Group-chat screenshots.** The section is hidden for now; search for `Chat proof:`. Add the three images to `assets/img/`, then remove the `hidden` attribute.
 - **Community waitlist link.** Every `data-waitlist` button in `community/index.html` points to `#top`. Swap in the Circle or GHL URL when it exists.
-- **Webinar Planner link.** It should be the public `notion.site` link. The current `app.notion.com` link asks visitors to sign in.
 - **Privacy policy.** Fill in the [bracketed] items and have counsel review it. It is set to `noindex` and left out of `sitemap.xml` until then; flip both back once it is approved.
 - **Map markers.** The cities are illustrative. Edit `MARKERS` in `assets/js/us-map.js`.
 - **Client names** in the "Trusted by" strip need to be confirmed.
