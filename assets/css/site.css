@@ -49,6 +49,7 @@ img { max-width: 100%; }
 .eyebrow { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 15px; color: var(--blue); margin-bottom: 18px; }
 .eyebrow--gold { color: var(--gold); }
 .h1 { font-family: var(--display); font-weight: 900; font-size: clamp(40px, 5.6vw, 78px); line-height: 0.94; letter-spacing: -0.035em; margin: 0 0 26px; text-wrap: balance; }
+.h1-accent { color: var(--blue); }
 .h2 { font-family: var(--display); font-weight: 900; font-size: clamp(32px, 4.4vw, 60px); line-height: 0.98; letter-spacing: -0.03em; margin: 0 0 52px; max-width: 820px; text-wrap: balance; }
 .h3 { font-family: var(--display); font-weight: 900; font-size: clamp(30px, 3.8vw, 50px); line-height: 0.96; letter-spacing: -0.03em; margin: 0 0 16px; text-wrap: balance; }
 .h-cta { font-family: var(--display); font-weight: 900; font-size: clamp(36px, 5.4vw, 74px); line-height: 0.94; letter-spacing: -0.035em; margin: 0 0 22px; text-wrap: balance; }
@@ -210,9 +211,11 @@ img { max-width: 100%; }
 .role { font-size: 13px; color: var(--muted); }
 
 /* ---------- Home: clients strip (continuous horizontal scroll) ---------- */
-.clients { background: var(--paper); border-bottom: 1px solid var(--line); padding: 30px var(--gutter); overflow: hidden; }
-.clients__row { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); }
-.clients__label { flex: none; letter-spacing: 0.14em; color: var(--muted); }
+.clients { background: var(--paper); border-bottom: 1px solid var(--line); overflow: hidden; }
+.clients__row { max-width: 1240px; margin: 0 auto; padding: 30px var(--gutter); display: flex; align-items: center; }
+/* The label sits centred on a dark band that continues the hero above the strip. */
+.clients__label { margin: 0; background: var(--ink); padding: 0 var(--gutter) clamp(22px, 2.6vw, 30px); display: flex; align-items: center; justify-content: center; gap: 16px; font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+.clients__label::before, .clients__label::after { content: ""; width: clamp(28px, 4vw, 48px); height: 1px; background: var(--gold); opacity: 0.6; }
 .clients__viewport { flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
 .clients__track { display: flex; width: max-content; animation: mmMarquee 48s linear infinite; }
 .clients__viewport:hover .clients__track { animation-play-state: paused; }
@@ -224,9 +227,8 @@ img { max-width: 100%; }
 .client-logo--icon { height: 46px; }
 @keyframes mmMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (max-width: 599.98px) {
-  .clients { padding: 24px 0; }
-  .clients__row { flex-direction: column; align-items: stretch; gap: 16px; }
-  .clients__label { text-align: center; }
+  .clients__row { padding: 24px 0; }
+  .clients__label { font-size: 12px; }
   .clients__track { animation-duration: 36s; }
   .client-logo { height: 28px; }
   .client-logo--stacked { height: 42px; }
