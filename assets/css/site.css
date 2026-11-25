@@ -138,7 +138,7 @@ img { max-width: 100%; }
 }
 
 /* ---------- Hero "machine" panel ---------- */
-.machine { --sig: var(--blue); border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.03); padding: 26px 26px 30px; position: relative; overflow: hidden; }
+.machine { --sig: var(--blue); border: 1px solid rgba(255,255,255,0.16); background: var(--ink); padding: 26px 26px 30px; position: relative; overflow: hidden; }
 .machine__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-dark); }
 .machine__live { display: flex; align-items: center; gap: 7px; }
 .machine__live i { width: 6px; height: 6px; border-radius: 50%; background: var(--sig); display: inline-block; animation: mmLive 2.4s ease-in-out infinite; }
@@ -866,3 +866,6 @@ img { max-width: 100%; }
 .cs-funnel__title { font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin: clamp(28px, 3.5vw, 44px) 0 14px; }
 .cs-funnel__title:first-of-type { margin-top: 0; }
 .cs-stats .stat__value.cs-stat--text { font-size: clamp(34px, 3.4vw, 52px); }
+
+/* Anything marked hidden (e.g. expired [data-until] promos) stays hidden, even when a class sets display. */
+[hidden] { display: none !important; }

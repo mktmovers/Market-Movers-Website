@@ -27,6 +27,12 @@
     if (new Date() >= new Date(+p[0], +p[1] - 1, +p[2])) el.hidden = true;
   });
 
+  // Time-limited promos that start later (e.g. the next webinar): hide before their data-from date (YYYY-MM-DD, local time).
+  all('[data-from]').forEach(function (el) {
+    var p = el.getAttribute('data-from').split('-');
+    if (new Date() < new Date(+p[0], +p[1] - 1, +p[2])) el.hidden = true;
+  });
+
   // Mobile menu (shown under 1100px via CSS).
   var header = document.querySelector('.site-header');
   var menuBtn = header && header.querySelector('.menu-btn');
