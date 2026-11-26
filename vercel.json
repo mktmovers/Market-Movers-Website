@@ -1,3 +1,10 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/blog/sitemap.xml", "destination": "/api/blog-sitemap" },
+    { "source": "/blog", "destination": "/api/blog" },
+    { "source": "/blog/", "destination": "/api/blog" },
+    { "source": "/blog/:slug", "destination": "/api/blog-post?slug=:slug" },
+    { "source": "/blog/:slug/", "destination": "/api/blog-post?slug=:slug" }
+  ]
 }
