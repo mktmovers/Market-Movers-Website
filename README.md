@@ -1,6 +1,6 @@
 # Market Movers — mktmovers.com
 
-This is the static marketing site built from the Claude Design redesign. It's plain HTML, CSS and JS with no build step and no framework. Every page is fully pre-rendered HTML, which means search engines and AI crawlers can read all of the text.
+This is the marketing site for mktmovers.com: plain HTML, CSS and JS, with no framework. The marketing pages are static files. The blog is server-rendered HTML, so search engines and AI crawlers can read the text on every page.
 
 ## Pages
 
@@ -17,6 +17,8 @@ This is the static marketing site built from the Claude Design redesign. It's pl
 | `/course-creators/` | `course-creators/index.html` |
 | `/free-tools/` | `free-tools/index.html` |
 | `/community/` | `community/index.html` |
+| `/blog/` | Server-rendered from BabyLoveGrowth. See `BLOG.md`. |
+| `/blog/<slug>/` | One article. Unknown slugs return HTTP 404. |
 | `/privacy/` | `privacy/index.html` (awaiting legal review; noindex) |
 
 Shared files:
@@ -26,7 +28,7 @@ Shared files:
 
 ## Deploy
 
-Any static host works: Netlify, Vercel, Cloudflare Pages or GitHub Pages. Publish the repository root with no build command. `404.html`, `robots.txt` and `sitemap.xml` are already included.
+The site is published from the repository root on Vercel, with no build command. Static pages, `404.html`, `robots.txt` and `sitemap.xml` are served as files. `/blog/` is the exception: Vercel serverless functions in `/api` render it from BabyLoveGrowth. See `BLOG.md` for the `BABYLOVEGROWTH_BLOG_API_KEY` environment variable.
 
 To preview locally, run `python3 -m http.server` in this folder and open http://localhost:8000.
 

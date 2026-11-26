@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mktmovers.com/sitemap.xml
+Sitemap: https://mktmovers.com/blog/sitemap.xml
